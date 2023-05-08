@@ -6,7 +6,7 @@
 
     <div class="row">
 
-        <form class="col-lg-12 mb-3" action="{{ route('categorie_register') }}" method="POST" enctype="multipart/form-data">
+        <form class="col-lg-6 mb-3" action="{{ route('categorie_register') }}" method="POST" enctype="multipart/form-data">
             <div class="card border-left-primary">
                 <div class="card-header py-3">
                     <h6 class="m-0 font-weight-bold text-primary">Ajouter une nouvelle catégorie d'œuvre</h6>
@@ -19,7 +19,7 @@
 
                     <div class="row">
 
-                        <div class="col col-lg-12">
+                        <div class="col col-lg-6">
 
                             <div class="row form-group">
 
