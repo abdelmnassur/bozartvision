@@ -1,4 +1,5 @@
 <x-artiste-basic>
+    
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800"> Détail / Modification </h1>
     </div>
@@ -40,7 +41,7 @@
                     <div class="row">
 
                         <div class="col-lg-4">
-                            <label> PRIX en $ </label> 
+                            <label> PRIX en $ : </label> 
                         </div>
 
                         <div class="col-lg-6">
@@ -65,7 +66,7 @@
                     <div class="row">
 
                         <div class="col-lg-4">
-                            <label> NOMBRE D'EXEMPLAIRE </label> 
+                            <label> NOMBRE D'EXEMPLAIRE : </label> 
                         </div>
 
                         <div class="col-lg-6">
@@ -90,7 +91,7 @@
                     <div class="row">
 
                         <div class="col-lg-4">
-                            <label> DIMENSIONS </label> 
+                            <label> DIMENSIONS : </label> 
                         </div>
 
                         <div class="col-lg-6">
@@ -115,7 +116,7 @@
                     <div class="row">
 
                         <div class="col-lg-4">
-                            <label> DESCRIPTION </label> 
+                            <label> DESCRIPTION : </label> 
                         </div>
 
                         <div class="col-lg-6">
@@ -140,7 +141,7 @@
                     <div class="row">
 
                         <div class="col-lg-4">
-                            <label> DATE DE PUPLICATION </label> 
+                            <label> DATE DE PUPLICATION : </label> 
                         </div>
 
                         <div class="col-lg-6">
@@ -152,8 +153,7 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
-    
 
 </x-artiste-basic>

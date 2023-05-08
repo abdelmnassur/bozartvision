@@ -55,7 +55,7 @@
                                     <td>{{ $oeuvre->titre }}</td>
                                     <td>{{ $oeuvre->prix }}</td>
                                     <td>{{ $oeuvre->nombre_exemplaire }}</td>
-                                    <td>{{ $oeuvre->largeur }}x{{ $oeuvre->longeur }} cm²</td>
+                                    <td>{{ $oeuvre->largeur }}x{{ $oeuvre->longeur }} cm</td>
 
                                     <td>
 

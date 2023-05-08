@@ -142,7 +142,7 @@ class ArtisteController extends Controller
             ]);
         } else return redirect()->back()->withInput();
 
-        return redirect()->route('artiste_dashboard');
+        return redirect()->route('mes_oeuvres');
     }
 
 
