@@ -185,8 +185,11 @@ class ArtisteController extends Controller
     /* END FONCTION OEUVRE */
 
 
-    public function artiste_profil($id)
-    {
+    public function artiste_profil()
+    {   
+        $user = Auth()->user()->id;
+        $artiste = DB::select("SELECT * FROM `artistes` WHERE user_id = $user;");
+        $id = $artiste[0]->id;
         $artiste = Artiste::find($id);
         return view('artiste/artiste_profil', compact('artiste'));
     }
