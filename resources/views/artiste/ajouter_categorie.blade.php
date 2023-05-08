@@ -19,17 +19,17 @@
 
                     <div class="row">
 
-                        <div class="col col-lg-6">
+                        <div class="col col-lg-12">
 
                             <div class="row form-group">
 
                                 @error('titre')
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
-                                <div class="col col-md-2">
+                                <div class="col col-md-3">
                                     <label for="titre" class="form-control-label">Catégorie</label>
                                 </div>
-                                <div class="col-12 col-md-10">
+                                <div class="col-12 col-md-9">
                                     <input class="form-control" type="text" name="categorie" id="categorie" placeholder="Titre de la catégorie" value="{{ old('categorie') }}">
                                 </div>
 
