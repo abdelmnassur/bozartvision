@@ -1,8 +1,13 @@
 <x-artiste-basic>
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800"> Categorie oeuvres d'arts </h1>
-        <a href="{{ route('categorie_form') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                class="fas fa-plus fa-sm text-white-50"></i> Ajouter une categorie oeuvre </a>
+        <h1 class="h3 mb-0 text-gray-800"> Categorie d'œuvres d'arts </h1>
+
+        <a href="{{ route('categorie_form') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+            <i class="fas fa-plus fa-sm text-white-50"></i> Ajouter une œuvre
+        </a>
+        {{-- <button onclick="ajouterCategorie()" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                class="fas fa-plus fa-sm text-white-50"></i> Ajouter une categorie oeuvre
+        </button> --}}
     </div>
 
     <!-- DataTales Example -->
@@ -33,7 +38,7 @@
         @else
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Tables des categories </h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Tables des categories des œuvres </h6>
                 </div>
                 <div class="card-body" style="text-align: center">
                     <div class="table-responsive">
@@ -41,7 +46,7 @@
                             <thead>
                                 <tr>
                                     <th>CATEGORIE</th>
-                                    <th>OEUVRE</th>
+                                    <th>ŒUVRE</th>
                                     <th>ACTION</th>
                                 </tr>
                             </thead>
@@ -94,7 +99,14 @@
     {
         document.getElementById("idM").setAttribute("value", idM);
         $('#CategorieM').text(categorie);
-        $('#modifieModal').modal('show');
+        $('#modifierModal').modal('show');
+    }
+
+    function ajouterCategorie()
+    {
+        // document.getElementById("idA").setAttribute("value", idA);
+        // $('#CategorieA').text(categorie);
+        $('#ajouterModal').modal('show');
     }
 </script>
 
@@ -134,7 +146,7 @@
 
 
 <!-- Modal Modification -->
-<div class="modal fade" id="modifieModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade" id="modifierModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -157,6 +169,43 @@
                             </div>
                             <div class="col-12 col-md-9">
                                 <input class="form-control" type="text" name="CategorieM"> 
+                            </div>
+                        </div>
+                        
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="document.location.reload(false)">Annuler</button>
+                            <button type="submit" class="btn btn-success">Enregistre</button>
+                        </div>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Ajouter -->
+<div class="modal fade" id="ajouterModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bolder"> AJOUTER UNE NOUVELLE CATEGORIE</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{{ route('categorie_register') }}" method="POST">
+                    @csrf
+                    @method('post')
+                    <p>
+                        <div class="row form-group">
+
+                            <div class="col col-md-3">
+                                <label for="titre" class="form-control-label">Catégorie</label>
+                            </div>
+                            <div class="col-12 col-md-9">
+                                <input class="form-control" type="text" name="categorie" required=""> 
                             </div>
                         </div>
                         

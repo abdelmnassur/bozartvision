@@ -132,7 +132,7 @@ class ArtisteController extends Controller
                 'artiste_id' => $artiste[0]->id,
                 'titre' => $request->titre,
                 'nombre_exemplaire' => $request->nombre_exemplaire,
-                'date_creation' => date('Y-m-d'),
+                'date_recent' => date('Y-m-d'),
                 'description' => $request->description,
                 'categorie_id' => $request->categorie_id,
                 'prix' => $request->prix,
