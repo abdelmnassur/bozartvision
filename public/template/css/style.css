@@ -1,0 +1,11 @@
+.center-elements{
+    text-align: center;
+}
+
+.au-btn--red {
+    background: #c83c3c;
+}
+
+.au-btn--red:hover {
+    background: rgb(201, 62, 62);
+}
