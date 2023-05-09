@@ -61,6 +61,7 @@ Route::get('artiste_profil', [ArtisteController::class, 'artiste_profil'])->name
     Route::put('modifier_prenom', [UserController::class, 'modifier_prenom'])->name('modifier_prenom')->middleware(['auth']);
     Route::put('modifier_genre', [UserController::class, 'modifier_genre'])->name('modifier_genre')->middleware(['auth']);
     Route::put('modifier_telephone', [UserController::class, 'modifier_telephone'])->name('modifier_telephone')->middleware(['auth']);
+    Route::put('modifier_email', [UserController::class, 'modifier_email'])->name('modifier_email')->middleware(['auth']);
 
     // GESTION OEUVRE
 Route::get('oeuvre_form', [ArtisteController::class, 'oeuvre_form'])->name('oeuvre_form')->middleware(['auth']);

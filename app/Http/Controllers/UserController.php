@@ -73,6 +73,20 @@ class UserController extends Controller
         }
     }
 
+    public function modifier_email(Request $req)
+    {
+        $id = $req->idE;
+        $user = User::find($id);
+        
+        if ( $user)
+        {
+            $user->email = $req->email;
+            $user->save();
+
+            return redirect()->back();
+        }
+    }
+
     /**
      * Display the specified resource.
      */

@@ -117,8 +117,7 @@
                     </div>
 
                     <div class="col-lg-3">
-                        <button
-                        onclick=""
+                        <button onclick="modifierEmail({{ $artiste->user->id }}, '{{ $artiste->user->email }}');"
                             class="btn">
                             <span>
                                 <i class="fas fa-pen"></i>
@@ -461,6 +460,14 @@
             $('#Telephone').text(telephone);
             $('#telephoneModal').modal('show');
         }
+
+        function modifierEmail(idE, email)
+        {
+            document.getElementById("idE").setAttribute("value", idE);
+            $('#Email').text(email);
+            $('#emailModal').modal('show');
+        }
+
     </script>
 </x-artiste-basic>
 
@@ -582,7 +589,7 @@
     </div>
 </div>
 
-<!-- Modal Modification du prénom d'utilisateur -->
+<!-- Modal Modification du Numéro de téléphone d'utilisateur -->
 <div class="modal fade" id="telephoneModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -618,4 +625,42 @@
             </div>
         </div>
     </div>
-</div
+</div>
+
+<!-- Modal Modification du mail d'utilisateur -->
+<div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bolder"> MODIFICATION DE VOTRE PRENOM </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{{ route('modifier_email') }}" method="POST">
+                    @csrf
+                    @method('put')
+                    <p>
+                        <input hidden type="number" name="idE" id="idE">
+                        <div class="row form-group">
+
+                            <div class="col col-md-3">
+                                <label for="email" class="form-control-label">E-MAIL</label>
+                            </div>
+                            <div class="col-12 col-md-9">
+                                <input class="form-control" type="email" name="email" placeholder="Votre adresse email" required=""> 
+                            </div>
+                        </div>
+                        
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="document.location.reload(false)">Annuler</button>
+                            <button type="submit" class="btn btn-success">Enregistre</button>
+                        </div>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
