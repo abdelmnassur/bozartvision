@@ -79,6 +79,7 @@ Route::put('supprimer_oeuvre', [ArtisteController::class, 'supprimer_oeuvre'])->
     Route::put('modifier_nombre_exemplaire', [ArtisteController::class, 'modifier_nombre_exemplaire'])->name('modifier_nombre_exemplaire')->middleware(['auth']);
     Route::put('modifier_dimension', [ArtisteController::class, 'modifier_dimension'])->name('modifier_dimension')->middleware(['auth']);
     Route::put('modifier_description', [ArtisteController::class, 'modifier_description'])->name('modifier_description')->middleware(['auth']);   
+    Route::put('modifier_image', [ArtisteController::class, 'modifier_image'])->name('modifier_image')->middleware(['auth']);   
 
     // GESTION CATEGORIE
 Route::put('desactiver_categorie/{id}', [ArtisteController::class, 'desactiver_categorie'])->name('desactiver_categorie')->middleware(['auth']);

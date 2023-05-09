@@ -15,7 +15,7 @@ class MainController extends Controller
     public function home()
     {
         //$oeuvres = Oeuvre::all();
-        $oeuvres = DB::select("SELECT * FROM `oeuvres` WHERE status = 1;");
+        $oeuvres = DB::select("SELECT * FROM `oeuvres`");
         return view('home', compact('oeuvres'));
     }
 

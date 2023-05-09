@@ -12,7 +12,7 @@
                     <h6 class="m-0 font-weight-bold text-primary"> Détail / Modification de l'œuvre {{ $oeuvre->titre }}</h6>
                 </div>
                 <div class="card-body">
-
+                    
                     <div class="row">
 
                         <div class="col-lg-4">
@@ -145,6 +145,28 @@
 
                     </div>
 
+                    <hr>
+
+                    @if ( $oeuvre->image)
+                    <div class="row justify-content-center" style="align-content: center">
+
+                        <img src="{{ asset('storage/image/oeuvres/'.$oeuvre->image) }} ">
+
+                    </div>
+
+                    <hr>
+                    
+                    <div class="row justify-content-center" style="align-content: center">
+                        <button onclick="modifierImage({{ $oeuvre->id }}, '{{ $oeuvre->image }}');"
+                            class="btn">
+                            <span>
+                                <i class="fas fa-pen"></i>
+                            </span>
+                            <span class="text">Modifier</span>
+                        </button>
+                    </div>
+                @endif
+
                 </div>
             </div>
         </div>
@@ -188,6 +210,13 @@
         document.getElementById("idDES").setAttribute("value", idDES);
         $('#Description').text(description);
         $('#descriptionModal').modal('show');
+    }
+
+    function modifierImage(idI, image)
+    {
+        document.getElementById("idI").setAttribute("value", idI);
+        $('#Image').text(image);
+        $('#imageModal').modal('show');
     }
 </script>
 
@@ -377,6 +406,44 @@
                             </div>
                             <div class="col-12 col-md-9">
                                 <input class="form-control" type="text" row="5" name="description" placeholder="Description de l'oeuvre" required=""> 
+                            </div>
+                        </div>
+                        
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="document.location.reload(false)">Annuler</button>
+                            <button type="submit" class="btn btn-success">Enregistre</button>
+                        </div>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Modification de l'image -->
+<div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bolder"> MODIFICATION DE L'IMAGE </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{{ route('modifier_image') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    @method('put')
+                    <p>
+                        <input hidden type="number" name="idI" id="idI">
+                        <div class="row form-group">
+
+                            <div class="col col-md-3">
+                                <label for="image" class="form-control-label">Description</label>
+                            </div>
+                            <div class="col-12 col-md-9">
+                                <input class="form-control" type="file"  name="image"  required=""> 
                             </div>
                         </div>
                         

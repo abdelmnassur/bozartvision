@@ -128,7 +128,7 @@ class ArtisteController extends Controller
         {
             if ($request->file("image"))
             {
-                $imageName = time() . "_" . $request->acronyme . "_" . $request->file("image")->getClientOriginalName();
+                $imageName = time() . "_" . $request->file("image")->getClientOriginalName();
                 $request->file("image")->storeAS("public/image/oeuvres/", $imageName);
             }
 
@@ -300,6 +300,33 @@ class ArtisteController extends Controller
             ]);
 
             $oeuvre->description = $req->description;
+
+            $oeuvre->save();
+
+            return redirect()->back();
+        }
+    }
+    /*    ------------------------------------   */
+
+     /*    Fonction de modification de la description      */
+     public function modifier_image(Request $req)
+    {
+        $id = $req->idI;
+        $oeuvre = Oeuvre::find($id);
+
+        if ( $oeuvre )
+        {
+            $req->validate([
+                'image' =>  ['required', 'image', 'mimes:jpeg,png,jpg,gif,svg', 'max:20000'],
+            ]);
+
+            if ($req->file("image"))
+            {
+                $imageName = time() . "_" . $req->file("image")->getClientOriginalName();
+                $req->file("image")->storeAS("public/image/oeuvres/", $imageName);
+            }
+
+            $oeuvre->image = $imageName;
 
             $oeuvre->save();
 
