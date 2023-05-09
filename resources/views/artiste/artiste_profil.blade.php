@@ -229,7 +229,48 @@
                 <div class="row">
 
                     <div class="col-lg-3">
-                        <label> <i  class="fa fa-facebook"></i> PAGE FACEBOOK : </label> 
+                        <label> BIOGRAPHIE : </label> 
+                    </div>
+
+                    <div class="col-lg-6">
+                        @if ( $artiste->biographie )
+                            <strong> {{ $artiste->biographie }} </strong>
+                        @endif
+                        <strong class="non"> Biographie non définie ! </strong>
+                    </div>
+
+                    <div class="col-lg-3">
+
+                        @if ( ! $artiste->biographie )
+
+                            <button onclick="" class="btn">
+                                <span>
+                                    <i class="fas fa-pen"></i>
+                                </span>
+                                <span class="text">Définir</span>
+                            </button>
+
+                            @else
+
+                            <button onclick="" class="btn">
+                                <span>
+                                    <i class="fas fa-pen"></i>
+                                </span>
+                                <span class="text">Modifier</span>
+                            </button>
+
+                        @endif
+                        
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <div class="row">
+
+                    <div class="col-lg-3">
+                        <label>PAGE FACEBOOK : </label> 
                     </div>
 
                     <div class="col-lg-6">
@@ -391,49 +432,6 @@
                     </div>
 
                 </div>
-
-                <hr>
-
-                <div class="row">
-
-                    <div class="col-lg-3">
-                        <label> BIOGRAPHIE : </label> 
-                    </div>
-
-                    <div class="col-lg-6">
-                        @if ( $artiste->biographie )
-                            <strong> {{ $artiste->biographie }} </strong>
-                        @endif
-                        <strong class="non"> Biographie non définie ! </strong>
-                    </div>
-
-                    <div class="col-lg-3">
-
-                        @if ( ! $artiste->biographie )
-
-                            <button onclick="" class="btn">
-                                <span>
-                                    <i class="fas fa-pen"></i>
-                                </span>
-                                <span class="text">Définir</span>
-                            </button>
-
-                            @else
-
-                            <button onclick="" class="btn">
-                                <span>
-                                    <i class="fas fa-pen"></i>
-                                </span>
-                                <span class="text">Modifier</span>
-                            </button>
-
-                        @endif
-
-                        
-                    </div>
-
-                </div>
-
 
             </div>
         </div>
