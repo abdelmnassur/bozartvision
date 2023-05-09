@@ -13,6 +13,28 @@
                 </div>
                 <div class="card-body">
                     
+                    @if ( $oeuvre->image)
+                        <div class="row justify-content-center" style="align-content: center">
+
+                            <img src="{{ asset('storage/image/oeuvres/'.$oeuvre->image) }} ">
+
+                        </div>
+
+                        <hr>
+                        
+                        <div class="row justify-content-center" style="align-content: center">
+                            <button onclick="modifierImage({{ $oeuvre->id }}, '{{ $oeuvre->image }}');"
+                                class="btn">
+                                <span>
+                                    <i class="fas fa-pen"></i>
+                                </span>
+                                <span class="text">Modifier</span>
+                            </button>
+                        </div>
+                    @endif
+
+                    <hr>
+                    
                     <div class="row">
 
                         <div class="col-lg-4">
@@ -144,28 +166,6 @@
                         </div>
 
                     </div>
-
-                    <hr>
-
-                    @if ( $oeuvre->image)
-                    <div class="row justify-content-center" style="align-content: center">
-
-                        <img src="{{ asset('storage/image/oeuvres/'.$oeuvre->image) }} ">
-
-                    </div>
-
-                    <hr>
-                    
-                    <div class="row justify-content-center" style="align-content: center">
-                        <button onclick="modifierImage({{ $oeuvre->id }}, '{{ $oeuvre->image }}');"
-                            class="btn">
-                            <span>
-                                <i class="fas fa-pen"></i>
-                            </span>
-                            <span class="text">Modifier</span>
-                        </button>
-                    </div>
-                @endif
 
                 </div>
             </div>

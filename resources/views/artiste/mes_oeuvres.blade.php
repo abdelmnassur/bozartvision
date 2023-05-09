@@ -40,7 +40,7 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th>CODE</th>
+                                <th>IMAGE</th>
                                 <th>TITRES</th>
                                 <th>PRIX $</th>
                                 <th>NOMBRE</th>
@@ -51,7 +51,7 @@
                         <tbody>
                             @foreach ($oeuvres as $oeuvre)
                                 <tr>
-                                    <td>{{ $oeuvre->id }}</td>
+                                    <td><img src="{{ asset('storage/image/oeuvres/'.$oeuvre->image) }}" style="border-radius: 15%;width: 50px;height: 50px;"></td>
                                     <td>{{ $oeuvre->titre }}</td>
                                     <td>{{ $oeuvre->prix }}</td>
                                     <td>{{ $oeuvre->nombre_exemplaire }}</td>
