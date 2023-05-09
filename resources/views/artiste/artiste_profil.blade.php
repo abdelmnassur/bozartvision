@@ -21,8 +21,7 @@
                     </div>
 
                     <div class="col-lg-3">
-                        <button
-                        onclick=""
+                        <button onclick="modifierNom({{ $artiste->user->id }}, '{{ $artiste->user->nom }}');"
                             class="btn">
                             <span>
                                 <i class="fas fa-pen"></i>
@@ -46,8 +45,7 @@
                     </div>
 
                     <div class="col-lg-3">
-                        <button
-                        onclick=""
+                        <button onclick="modifierPrenom({{ $artiste->user->id }}, '{{ $artiste->user->prenom }}');"
                             class="btn">
                             <span>
                                 <i class="fas fa-pen"></i>
@@ -71,8 +69,7 @@
                     </div>
 
                     <div class="col-lg-3">
-                        <button
-                        onclick=""
+                        <button onclick="modifierGenre({{ $artiste->user->id }}, '{{ $artiste->user->genre }}');"
                             class="btn">
                             <span>
                                 <i class="fas fa-pen"></i>
@@ -96,8 +93,7 @@
                     </div>
 
                     <div class="col-lg-3">
-                        <button
-                        onclick=""
+                        <button onclick="modifierTelephone({{ $artiste->user->id }}, '{{ $artiste->user->telephone }}');"
                             class="btn">
                             <span>
                                 <i class="fas fa-pen"></i>
@@ -438,6 +434,188 @@
     </div>
 
     <script>
-        
+        function modifierNom(id, nom)
+        {
+            document.getElementById("id").setAttribute("value", id);
+            $('#Nom').text(nom);
+            $('#nomModal').modal('show');
+        }
+
+        function modifierPrenom(idP, prenom)
+        {
+            document.getElementById("idP").setAttribute("value", idP);
+            $('#Prenom').text(prenom);
+            $('#prenomModal').modal('show');
+        }
+
+        function modifierGenre(idG, genre)
+        {
+            document.getElementById("idG").setAttribute("value", idG);
+            $('#Genre').text(genre);
+            $('#genreModal').modal('show');
+        }
+
+        function modifierTelephone(idTEL, telephone)
+        {
+            document.getElementById("idTEL").setAttribute("value", idTEL);
+            $('#Telephone').text(telephone);
+            $('#telephoneModal').modal('show');
+        }
     </script>
 </x-artiste-basic>
+
+<!-- Modal Modification du nom d'utilisateur -->
+<div class="modal fade" id="nomModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bolder"> MODIFICATION DE VOTRE NOM </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{{ route('modifier_nom') }}" method="POST">
+                    @csrf
+                    @method('put')
+                    <p>
+                        <input hidden type="number" name="id" id="id">
+                        <div class="row form-group">
+
+                            <div class="col col-md-3">
+                                <label for="nom" class="form-control-label">NOM</label>
+                            </div>
+                            <div class="col-12 col-md-9">
+                                <input class="form-control" type="text" name="nom" placeholder="Votre nom de famille" required=""> 
+                            </div>
+                        </div>
+                        
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="document.location.reload(false)">Annuler</button>
+                            <button type="submit" class="btn btn-success">Enregistre</button>
+                        </div>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Modification du prénom d'utilisateur -->
+<div class="modal fade" id="prenomModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bolder"> MODIFICATION DE VOTRE PRENOM </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{{ route('modifier_prenom') }}" method="POST">
+                    @csrf
+                    @method('put')
+                    <p>
+                        <input hidden type="number" name="idP" id="idP">
+                        <div class="row form-group">
+
+                            <div class="col col-md-3">
+                                <label for="prenom" class="form-control-label">PRENOM</label>
+                            </div>
+                            <div class="col-12 col-md-9">
+                                <input class="form-control" type="text" name="prenom" placeholder="Votre prénom" required=""> 
+                            </div>
+                        </div>
+                        
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="document.location.reload(false)">Annuler</button>
+                            <button type="submit" class="btn btn-success">Enregistre</button>
+                        </div>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Modification du genre d'utilisateur -->
+<div class="modal fade" id="genreModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bolder"> MODIFICATION DE VOTRE GENRE </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{{ route('modifier_genre') }}" method="POST">
+                    @csrf
+                    @method('put')
+                    <p>
+                        <input hidden type="number" name="idG" id="idG">
+                        <div class="row form-group">
+
+                            <div class="col col-md-3">
+                                <label for="genre" class="form-control-label">GENRE</label>
+                            </div>
+                            <div class="col-12 col-md-9">
+                                <select name="genre" class="form-control" >
+                                    <option value="0">Sélectinonnez le genre</option>
+                                    <option value="homme">Homme</option>
+                                    <option value="femme">Femme</option>
+                                </select> 
+                            </div>
+                        </div>
+                        
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="document.location.reload(false)">Annuler</button>
+                            <button type="submit" class="btn btn-success">Enregistre</button>
+                        </div>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Modification du prénom d'utilisateur -->
+<div class="modal fade" id="telephoneModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bolder"> MODIFICATION DE VOTRE PRENOM </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{{ route('modifier_telephone') }}" method="POST">
+                    @csrf
+                    @method('put')
+                    <p>
+                        <input hidden type="number" name="idTEL" id="idTEL">
+                        <div class="row form-group">
+
+                            <div class="col col-md-3">
+                                <label for="telephone" class="form-control-label">TELEPHONE</label>
+                            </div>
+                            <div class="col-12 col-md-9">
+                                <input class="form-control" type="number" name="telephone" placeholder="Votre numéro de téléphone whatsapp" required=""> 
+                            </div>
+                        </div>
+                        
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="document.location.reload(false)">Annuler</button>
+                            <button type="submit" class="btn btn-success">Enregistre</button>
+                        </div>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div

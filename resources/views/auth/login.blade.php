@@ -23,15 +23,6 @@
                                     <label>Mot de passe</label>
                                     <input class="au-input au-input--full" type="password" name="password" placeholder="Mot de passe">
                                 </div>
-
-                                {{-- <div class="login-checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember">Se souvenir de moi
-                                    </label>
-                                    <label>
-                                        <a href="#">Mot de paase oublié ?</a>
-                                    </label>
-                                </div> --}}
                                 
                                 <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">Connexion</button>
 

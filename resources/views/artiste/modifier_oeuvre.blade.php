@@ -305,7 +305,7 @@
     </div>
 </div>
 
-<!-- Modal Modification de largeur et longeutr -->
+<!-- Modal Modification de largeur et longeur -->
 <div class="modal fade" id="dimensionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -353,7 +353,7 @@
     </div>
 </div>
 
-<!-- Modal Modification de largeur et longeutr -->
+<!-- Modal Modification de la description -->
 <div class="modal fade" id="descriptionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">

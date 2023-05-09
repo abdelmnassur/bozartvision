@@ -56,6 +56,12 @@ Route::get('admin_gestion_artistes', [AdminController::class, 'admin_gestion_art
 Route::get('artiste_dashboard', [ArtisteController::class, 'artiste_dashboard'])->name('artiste_dashboard')->middleware(['auth']);
 Route::get('artiste_profil', [ArtisteController::class, 'artiste_profil'])->name('artiste_profil');
 
+    //FONCTION DE MODIFICATION DU PROFIL
+    Route::put('modifier_nom', [UserController::class, 'modifier_nom'])->name('modifier_nom')->middleware(['auth']);
+    Route::put('modifier_prenom', [UserController::class, 'modifier_prenom'])->name('modifier_prenom')->middleware(['auth']);
+    Route::put('modifier_genre', [UserController::class, 'modifier_genre'])->name('modifier_genre')->middleware(['auth']);
+    Route::put('modifier_telephone', [UserController::class, 'modifier_telephone'])->name('modifier_telephone')->middleware(['auth']);
+
     // GESTION OEUVRE
 Route::get('oeuvre_form', [ArtisteController::class, 'oeuvre_form'])->name('oeuvre_form')->middleware(['auth']);
 Route::get('modifier_oeuvre/{id}', [ArtisteController::class, 'modifier_oeuvre'])->name('modifier_oeuvre')->middleware(['auth']);
