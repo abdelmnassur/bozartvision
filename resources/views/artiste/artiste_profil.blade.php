@@ -139,14 +139,17 @@
                     <div class="col-lg-6">
                         @if ( $artiste->user->date_de_naissanse )
                             <strong> {{ $artiste->user->date_de_naissanse }} </strong>
+                            
+                        @else
+                            <strong class="text-danger"> Date de naissance non définie </strong>
                         @endif
-                        <strong> Date de naissance non définie </strong>
+                        
                     </div>
 
                     <div class="col-lg-3">
                         @if ( ! $artiste->user->date_de_naissanse )
 
-                            <button onclick="" class="btn">
+                            <button onclick="modifierDate_de_naissance({{ $artiste->user->id }}, '{{ $artiste->user->date_de_naissanse }}');" class="btn">
                                 <span>
                                     <i class="fas fa-pen"></i>
                                 </span>
@@ -155,7 +158,7 @@
 
                             @else
 
-                            <button onclick="" class="btn">
+                            <button onclick="modifierDate_de_naissance({{ $artiste->user->id }}, '{{ $artiste->user->date_de_naissanse }}');" class="btn">
                                 <span>
                                     <i class="fas fa-pen"></i>
                                 </span>
@@ -179,7 +182,7 @@
                         @if ( $artiste->user->photo )
                             <strong> {{ $artiste->user->photo }} </strong>
                         @endif
-                        <strong> Photo de profil non définie ! </strong>
+                        <strong class="text-danger" style="font-style: italic"> Photo de profil non définie ! </strong>
                     </div>
 
                     <div class="col-lg-3">
@@ -468,6 +471,13 @@
             $('#emailModal').modal('show');
         }
 
+        function modifierDate_de_naissance(idDAT, date)
+        {
+            document.getElementById("idDAT").setAttribute("value", idDAT);
+            $('#Date_de_naissance').text(date);
+            $('#date_de_naissanceModal').modal('show');
+        }
+
     </script>
 </x-artiste-basic>
 
@@ -651,6 +661,44 @@
                             </div>
                             <div class="col-12 col-md-9">
                                 <input class="form-control" type="email" name="email" placeholder="Votre adresse email" required=""> 
+                            </div>
+                        </div>
+                        
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="document.location.reload(false)">Annuler</button>
+                            <button type="submit" class="btn btn-success">Enregistre</button>
+                        </div>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Définir la date de naissance d'utilisateur -->
+<div class="modal fade" id="date_de_naissanceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bolder"> MODIFICATION DE VOTRE PRENOM </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{{ route('modifier_date_de_naissance') }}" method="POST">
+                    @csrf
+                    @method('put')
+                    <p>
+                        <input hidden type="number" name="idDAT" id="idDAT">
+                        <div class="row form-group">
+
+                            <div class="col col-md-3">
+                                <label for="date_de_naissanse" class="form-control-label">DATE DE NAISSANCE</label>
+                            </div>
+                            <div class="col-12 col-md-9">
+                                <input class="form-control" type="date" name="date_de_naissanse" placeholder="Votre date de naissance" required=""> 
                             </div>
                         </div>
                         

@@ -87,6 +87,20 @@ class UserController extends Controller
         }
     }
 
+    public function modifier_date_de_naissance(Request $req)
+    {
+        $id = $req->idDAT;
+        $user = User::find($id);
+        
+        if ( $user)
+        {
+            $user->date_de_naissanse = $req->date_de_naissanse	;
+            $user->save();
+
+            return redirect()->back();
+        }
+    }
+
     /**
      * Display the specified resource.
      */
