@@ -2,7 +2,7 @@
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800"> Mes œuvres d'arts </h1>
         <a href="{{ route('oeuvre_form') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-            <i class="fas fa-plus fa-sm text-white-50"></i> Ajouter une oeuvre
+            <i class="fas fa-plus fa-sm text-white-50"></i> Ajouter une œuvre
         </a>
     </div>
 
@@ -147,7 +147,7 @@
                     @csrf
                     @method('put')
                     <p> Souhaitez-vous vraiment SUPPRIMER <b id="titreOeuvre"></b> ?
-                    <br> Une fois cette oeuvre supprimer elle ne sera plus visible sur le site,
+                    <br> Une fois cette œuvre supprimer elle ne sera plus visible sur le site,
                     et elle disparaitre pour toujours.
                 </p>
                     <p>
@@ -180,7 +180,7 @@
                     @csrf
                     @method('put')
                     <p> Souhaitez-vous vraiment ACTIVER <b id="titreOeuvreA"></b> ?
-                        <br>Une fois cette oeuvre activer elle sera visible sur le site.
+                        <br>Une fois cette œuvre activer elle sera visible sur le site.
                     </p>
                     <p>
                         <input hidden type="text" name="id" id="id">
@@ -212,7 +212,7 @@
                     @csrf
                     @method('put')
                     <p> Souhaitez-vous vraiment DESACTIVER <b id="titreOeuvreD"></b> ?
-                        <br>Une fois cette oeuvre désactiver elle ne sera plus visible sur le site, mais elle restera
+                        <br>Une fois cette œuvre désactiver elle ne sera plus visible sur le site, mais elle restera
                         dans votre espace.
                     </p>
                     <p>

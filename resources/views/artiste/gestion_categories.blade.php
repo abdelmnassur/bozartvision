@@ -3,11 +3,9 @@
         <h1 class="h3 mb-0 text-gray-800"> Categorie d'œuvres d'arts </h1>
 
         <a href="{{ route('categorie_form') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-            <i class="fas fa-plus fa-sm text-white-50"></i> Ajouter une œuvre
+            <i class="fas fa-plus fa-sm text-white-50"></i> Ajouter une nouvelle catégorie d'œuvre
         </a>
-        {{-- <button onclick="ajouterCategorie()" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                class="fas fa-plus fa-sm text-white-50"></i> Ajouter une categorie oeuvre
-        </button> --}}
+        
     </div>
 
     <!-- DataTales Example -->
@@ -46,14 +44,12 @@
                             <thead>
                                 <tr>
                                     <th>CATEGORIE</th>
-                                    <th>ŒUVRE</th>
                                     <th>ACTION</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($categories as $categorie)
                                     <tr>
-                                        <td> {{ $categorie->categorie }}</td>
                                         <td> {{ $categorie->categorie }}</td>
                                         <td>
                     
@@ -168,7 +164,7 @@
                                 <label for="titre" class="form-control-label">Catégorie</label>
                             </div>
                             <div class="col-12 col-md-9">
-                                <input class="form-control" type="text" name="CategorieM"> 
+                                <input class="form-control" type="text" name="CategorieM" value="{{ $categorie->categorie }}"> 
                             </div>
                         </div>
                         

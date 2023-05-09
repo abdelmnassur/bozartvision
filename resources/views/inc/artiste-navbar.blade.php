@@ -31,13 +31,22 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('mes_oeuvres') }}">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Mes oeuvres d'arts</span></a>
+                    <span>Mes oeuvres d'arts</span>
+                </a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('gestion_categories') }}">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Categories</span></a>
+                    <span>Categories</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('artiste_profil') }}">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>Mon profil</span>
+                </a>
             </li>
 
             <!-- Divider -->

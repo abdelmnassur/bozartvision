@@ -438,7 +438,8 @@
             </div>
         </div>
     </div>
-    
-    
 
+    <script>
+        
+    </script>
 </x-artiste-basic>

@@ -65,6 +65,13 @@ Route::put('desactiver_oeuvre', [ArtisteController::class, 'desactiver_oeuvre'])
 Route::put('activer_oeuvre', [ArtisteController::class, 'activer_oeuvre'])->name('activer_oeuvre')->middleware(['auth']);
 Route::put('supprimer_oeuvre', [ArtisteController::class, 'supprimer_oeuvre'])->name('supprimer_oeuvre')->middleware(['auth']);
 
+    //FONCTION DE MODIFICATION DES OEUVRES 
+    Route::put('modifier_titre', [ArtisteController::class, 'modifier_titre'])->name('modifier_titre')->middleware(['auth']);
+    Route::put('modifier_prix', [ArtisteController::class, 'modifier_prix'])->name('modifier_prix')->middleware(['auth']);
+    Route::put('modifier_nombre_exemplaire', [ArtisteController::class, 'modifier_nombre_exemplaire'])->name('modifier_nombre_exemplaire')->middleware(['auth']);
+    Route::put('modifier_dimension', [ArtisteController::class, 'modifier_dimension'])->name('modifier_dimension')->middleware(['auth']);
+    Route::put('modifier_description', [ArtisteController::class, 'modifier_description'])->name('modifier_description')->middleware(['auth']);   
+
     // GESTION CATEGORIE
 Route::put('desactiver_categorie/{id}', [ArtisteController::class, 'desactiver_categorie'])->name('desactiver_categorie')->middleware(['auth']);
 Route::put('activer_categorie/{id}', [ArtisteController::class, 'activer_categorie'])->name('activer_categorie')->middleware(['auth']);
