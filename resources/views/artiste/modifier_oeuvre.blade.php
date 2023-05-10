@@ -179,6 +179,7 @@
     function modifierTitre(id, titre)
     {
         document.getElementById("id").setAttribute("value", id);
+        document.getElementById("titre").setAttribute("value", titre);
         $('#Titre').text(titre);
         $('#titreModal').modal('show');
     }
@@ -186,6 +187,7 @@
     function modifierPrix(idP, prix)
     {
         document.getElementById("idP").setAttribute("value", idP);
+        document.getElementById("prix").setAttribute("value", prix);
         $('#Prix').text(prix);
         $('#prixModal').modal('show');
     }
@@ -193,6 +195,7 @@
     function modifierNombreExemplaire(idNE, nombre_exemplaire)
     {
         document.getElementById("idNE").setAttribute("value", idNE);
+        document.getElementById("nombre_exemplaire").setAttribute("value", nombre_exemplaire);
         $('#Nombre_exemplaire').text(nombre_exemplaire);
         $('#nombre_exemplaireModal').modal('show');
     }
@@ -200,6 +203,8 @@
     function modifierDimension(idD, largeur, longeur)
     {
         document.getElementById("idD").setAttribute("value", idD);
+        document.getElementById("largeur").setAttribute("value", largeur);
+        document.getElementById("longeur").setAttribute("value", longeur);
         $('#Largeur').text(largeur);
         $('#Longeur').text(longeur);
         $('#dimensionModal').modal('show');
@@ -243,7 +248,7 @@
                                 <label for="titre" class="form-control-label">Titre</label>
                             </div>
                             <div class="col-12 col-md-9">
-                                <input class="form-control" type="text" name="titre" placeholder="Le nouveau titre" required=""> 
+                                <input class="form-control" type="text" name="titre" id="titre" required=""> 
                             </div>
                         </div>
                         
@@ -281,7 +286,7 @@
                                 <label for="prix" class="form-control-label">Prix</label>
                             </div>
                             <div class="col-12 col-md-9">
-                                <input class="form-control" type="number" name="prix" placeholder="Le nouveau prix de l'oeuvre en $ US" required=""> 
+                                <input class="form-control" type="number" name="prix" id="prix" required=""> 
                             </div>
                         </div>
                         
@@ -319,7 +324,7 @@
                                 <label for="nombre_exemplaire" class="form-control-label">Exemplaire</label>
                             </div>
                             <div class="col-12 col-md-9">
-                                <input class="form-control" type="number" name="nombre_exemplaire" placeholder="Nombre d'exemplaire" required=""> 
+                                <input class="form-control" type="number" name="nombre_exemplaire" id="nombre_exemplaire" required=""> 
                             </div>
                         </div>
                         
@@ -357,7 +362,7 @@
                                 <label for="largeur" class="form-control-label">Largeur</label>
                             </div>
                             <div class="col-12 col-md-9">
-                                <input class="form-control" type="number" name="largeur" placeholder="Largeur" required=""> 
+                                <input class="form-control" type="number" name="largeur" id="largeur" required=""> 
                             </div>
                         </div>
 
@@ -367,7 +372,7 @@
                                 <label for="longeur" class="form-control-label">Longeur</label>
                             </div>
                             <div class="col-12 col-md-9">
-                                <input class="form-control" type="number" name="longeur" placeholder="Longeur" required=""> 
+                                <input class="form-control" type="number" name="longeur" id="longeur" required=""> 
                             </div>
                         </div>
                         
@@ -405,7 +410,7 @@
                                 <label for="description" class="form-control-label">Description</label>
                             </div>
                             <div class="col-12 col-md-9">
-                                <input class="form-control" type="text" row="5" name="description" placeholder="Description de l'oeuvre" required=""> 
+                                <textarea class="form-control" rows="7" type="text" name="description"></textarea>
                             </div>
                         </div>
                         

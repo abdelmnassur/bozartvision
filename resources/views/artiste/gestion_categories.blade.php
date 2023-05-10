@@ -94,6 +94,7 @@
     function modifierCategorie(idM, categorie)
     {
         document.getElementById("idM").setAttribute("value", idM);
+        document.getElementById("CategorieM").setAttribute("value", categorie);
         $('#CategorieM').text(categorie);
         $('#modifierModal').modal('show');
     }
@@ -130,7 +131,7 @@
                     <p>
                         <input hidden type="number" name="id" id="id">
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="document.location.reload(false)">Annuler</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" >Annuler</button>
                         <button type="submit" class="btn btn-success">Confirmer</button>
                     </div>
                     </p>
@@ -164,7 +165,7 @@
                                 <label for="titre" class="form-control-label">Catégorie</label>
                             </div>
                             <div class="col-12 col-md-9">
-                                <input class="form-control" type="text" name="CategorieM" value="{{ $categorie->categorie }}"> 
+                                <input class="form-control" type="text" name="CategorieM" id="CategorieM"> 
                             </div>
                         </div>
                         
@@ -198,10 +199,10 @@
                         <div class="row form-group">
 
                             <div class="col col-md-3">
-                                <label for="titre" class="form-control-label">Catégorie</label>
+                                <label for="categorie" class="form-control-label">Catégorie</label>
                             </div>
                             <div class="col-12 col-md-9">
-                                <input class="form-control" type="text" name="categorie" required=""> 
+                                <input class="form-control" type="text" name="categorie" id="categorie" required=""> 
                             </div>
                         </div>
                         

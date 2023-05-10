@@ -55,11 +55,10 @@ class ArtisteController extends Controller
     {
         $id = $req->idM;
         $categorie = Categorie::find($id);
-
-        if ( $categorie )
+        if ( $categorie)
         {
             $req->validate([
-            'categorie' => ['required', 'string'],
+            'CategorieM' => ['required', 'string'],
             ]);
 
             $categorie->categorie = $req->CategorieM;
@@ -74,6 +73,7 @@ class ArtisteController extends Controller
         }
 
     }
+
 
     public function supprimer_categorie(Request $req)
     {

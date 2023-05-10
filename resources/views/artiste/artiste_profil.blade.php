@@ -439,6 +439,7 @@
         function modifierNom(id, nom)
         {
             document.getElementById("id").setAttribute("value", id);
+            document.getElementById("nom").setAttribute("value", nom);
             $('#Nom').text(nom);
             $('#nomModal').modal('show');
         }
@@ -446,6 +447,7 @@
         function modifierPrenom(idP, prenom)
         {
             document.getElementById("idP").setAttribute("value", idP);
+            document.getElementById("prenom").setAttribute("value", prenom);
             $('#Prenom').text(prenom);
             $('#prenomModal').modal('show');
         }
@@ -453,6 +455,7 @@
         function modifierGenre(idG, genre)
         {
             document.getElementById("idG").setAttribute("value", idG);
+            document.getElementById("genre").setAttribute("value", genre);
             $('#Genre').text(genre);
             $('#genreModal').modal('show');
         }
@@ -460,6 +463,7 @@
         function modifierTelephone(idTEL, telephone)
         {
             document.getElementById("idTEL").setAttribute("value", idTEL);
+            document.getElementById("telephone").setAttribute("value", telephone);
             $('#Telephone').text(telephone);
             $('#telephoneModal').modal('show');
         }
@@ -467,14 +471,16 @@
         function modifierEmail(idE, email)
         {
             document.getElementById("idE").setAttribute("value", idE);
+            document.getElementById("email").setAttribute("value", email);
             $('#Email').text(email);
             $('#emailModal').modal('show');
         }
 
-        function modifierDate_de_naissance(idDAT, date)
+        function modifierDate_de_naissance(idDAT, date_de_naissance)
         {
             document.getElementById("idDAT").setAttribute("value", idDAT);
-            $('#Date_de_naissance').text(date);
+            document.getElementById("date_de_naissance").setAttribute("value", date_de_naissance);
+            $('#Date_de_naissance').text(date_de_naissance);
             $('#date_de_naissanceModal').modal('show');
         }
 
@@ -504,7 +510,7 @@
                                 <label for="nom" class="form-control-label">NOM</label>
                             </div>
                             <div class="col-12 col-md-9">
-                                <input class="form-control" type="text" name="nom" placeholder="Votre nom de famille" required=""> 
+                                <input class="form-control" type="text" name="nom" id="nom" required=""> 
                             </div>
                         </div>
                         
@@ -542,7 +548,7 @@
                                 <label for="prenom" class="form-control-label">PRENOM</label>
                             </div>
                             <div class="col-12 col-md-9">
-                                <input class="form-control" type="text" name="prenom" placeholder="Votre prénom" required=""> 
+                                <input class="form-control" type="text" name="prenom" id="prenom" required=""> 
                             </div>
                         </div>
                         
@@ -563,7 +569,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bolder"> MODIFICATION DE VOTRE GENRE </h5>
+                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bolder"> SELECTIONNEZ DE VOTRE GENRE </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -580,7 +586,7 @@
                                 <label for="genre" class="form-control-label">GENRE</label>
                             </div>
                             <div class="col-12 col-md-9">
-                                <select name="genre" class="form-control" >
+                                <select name="genre" class="form-control">
                                     <option value="0">Sélectinonnez le genre</option>
                                     <option value="homme">Homme</option>
                                     <option value="femme">Femme</option>
@@ -605,7 +611,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bolder"> MODIFICATION DE VOTRE PRENOM </h5>
+                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bolder"> MODIFICATION DU NUMERO DE TELEPHONE </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -622,7 +628,7 @@
                                 <label for="telephone" class="form-control-label">TELEPHONE</label>
                             </div>
                             <div class="col-12 col-md-9">
-                                <input class="form-control" type="number" name="telephone" placeholder="Votre numéro de téléphone whatsapp" required=""> 
+                                <input class="form-control" type="number" name="telephone" id="telephone" required=""> 
                             </div>
                         </div>
                         
@@ -643,7 +649,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bolder"> MODIFICATION DE VOTRE PRENOM </h5>
+                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bolder"> MODIFICATION DE VOTRE EMAIL </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -660,7 +666,7 @@
                                 <label for="email" class="form-control-label">E-MAIL</label>
                             </div>
                             <div class="col-12 col-md-9">
-                                <input class="form-control" type="email" name="email" placeholder="Votre adresse email" required=""> 
+                                <input class="form-control" type="email" name="email" id="email" required=""> 
                             </div>
                         </div>
                         
@@ -681,7 +687,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bolder"> MODIFICATION DE VOTRE PRENOM </h5>
+                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bolder"> MODIFICATION DE VOTRE DATE DE NAISSANCE </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -698,7 +704,7 @@
                                 <label for="date_de_naissanse" class="form-control-label">DATE DE NAISSANCE</label>
                             </div>
                             <div class="col-12 col-md-9">
-                                <input class="form-control" type="date" name="date_de_naissanse" placeholder="Votre date de naissance" required=""> 
+                                <input class="form-control" type="date" name="date_de_naissanse" id="date_de_naissance"  required=""> 
                             </div>
                         </div>
                         
