@@ -52,7 +52,7 @@
                                     <th>Prenom</th>
                                     <th>Téléphone</th>
                                     <th>email</th>
-                                    <th>status</th>
+                                    <th>actif</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -67,7 +67,7 @@
                                                 onclick="activerUser({{ $user->id }}, '{{ $user->nom }} {{ $user->prenom }}');"
                                                 class="switch switch-text switch-success switch-pill m-l-0">
                                                 <input type="checkbox" class="switch-input"
-                                                    @if ($user->status == 1) checked="true" @endif>
+                                                    @if ($user->actif == 1) checked="true" @endif>
                                                 <span data-on="On" data-off="Off" class="switch-label"></span>
                                                 <span class="switch-handle"></span>
                                             </label>
@@ -75,7 +75,7 @@
                                         </td>
                                         <td>
                                             <div class="table-data-feature center-elements">
-                                                <a class="item" data-toggle="tooltip" data-placement="top" title="Edit" href="{{ route('show',$user->id ) }}">
+                                                <a class="item" data-toggle="tooltip" data-placement="top" title="Edit">
                                                     <i class="zmdi zmdi-edit"></i>
                                                 </a>
                                             </div>
@@ -91,15 +91,49 @@
         </div>
     </div>
 
-    {{--   <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Launch demo modal
-  </button> --}}
-
-
-
 </x-admin-basic>
 
 <script>
-    //$('.card-body').hide();
+    function activerUser(id, nom) {
+        document.getElementById("id").setAttribute("value", id);
+        $('#nomUser').text(nom);
+        if (id = 1) {
+            $('#ad').text('désactiver');
+        }
+        if (id = 0) {
+            $('#ad').text('activer');
+        }
+        $('#exampleModal').modal('show');
+    }
+    
 </script>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Désactiver utilisateur</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{{ route('admin_activer_desactiver') }}" method="POST">
+                    @csrf
+                    @method('put')
+                    <p>Souhaitez-vous <b id="ad"></b> cet utilisateur?</p>
+                    <p>
+                        Nom : <b id="nomUser"></b> <br>
+                        <input hidden type="text" name="id" id="id">
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="document.location.reload(false)">Annuler</button>
+                        <button type="submit" class="btn btn-success">Confirmer</button>
+                    </div>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -91,9 +91,9 @@ class AdminController extends Controller
 
         // vérifier afin qu'un admin ne soit désactivé
         if(count($admin)==0){
-            if ($user->status == 1) {
-                $user->status = 0;
-            } else $user->status = 1;
+            if ($user->actif == 1) {
+                $user->actif = 0;
+            } else $user->actif = 1;
             $user->save();
         }
         

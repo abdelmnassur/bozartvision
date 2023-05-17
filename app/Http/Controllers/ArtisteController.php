@@ -162,8 +162,8 @@ class ArtisteController extends Controller
         $id = $req->id;
         $oeuvre = Oeuvre::find($id);
 
-        if (!$oeuvre->status) {
-            $oeuvre->status = 1;
+        if (!$oeuvre->actif) {
+            $oeuvre->actif = 1;
             $oeuvre->save();
         }
         return redirect()->back();
@@ -173,8 +173,8 @@ class ArtisteController extends Controller
     {
         $id = $req->idD;
         $oeuvre = Oeuvre::find($id);
-        if ($oeuvre->status == 1) {
-            $oeuvre->status = 0;
+        if ($oeuvre->actif == 1) {
+            $oeuvre->actif = 0;
             $oeuvre->save();
         }
         return redirect()->back();

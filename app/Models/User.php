@@ -28,7 +28,7 @@ class User extends Authenticatable
         'telephone',
         'photo',
         'profil',
-        'status',
+        'actif',
         'date_de_naissanse',
         'password',
     ];

@@ -52,7 +52,7 @@
                                     <th>Prenom</th>
                                     <th>Téléphone</th>
                                     <th>email</th>
-                                    <th>status</th>
+                                    <th>actif</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -67,14 +67,14 @@
                                                 onclick="activerUser({{ $artiste->user->id }}, '{{ $artiste->user->nom }} {{ $artiste->user->prenom }}');"
                                                 class="switch switch-text switch-success switch-pill m-l-0">
                                                 <input type="checkbox" class="switch-input"
-                                                    @if ($artiste->user->status == 1) checked="true" @endif>
+                                                    @if ($artiste->user->actif == 1) checked="true" @endif>
                                                 <span data-on="On" data-off="Off" class="switch-label"></span>
                                                 <span class="switch-handle"></span>
                                             </label>
 
                                         </td>
                                         <td>
-                                            {{ $artiste->user->status }}
+                                            {{ $artiste->user->actif }}
 
                                             {{-- <div class="table-data-feature center-elements">
                                                 <a class="item" data-toggle="tooltip" data-placement="top"
@@ -94,13 +94,6 @@
         </div>
     </div>
 
-    {{--   <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Launch demo modal
-  </button> --}}
-
-
-
 </x-admin-basic>
 
 <script>
@@ -114,9 +107,8 @@
             $('#ad').text('activer');
         }
         $('#exampleModal').modal('show');
-        //alert('Souhaitez vous veritablement désactiver ce utilisateur'+id);
     }
-    //$('.card-body').hide();
+    
 </script>
 
 <!-- Modal -->

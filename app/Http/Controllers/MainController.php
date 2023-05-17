@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Models\Oeuvre;
 use App\Models\Artiste;
+use App\Models\Categorie;
 use Illuminate\Support\Facades\DB;
 
 
@@ -14,8 +15,7 @@ class MainController extends Controller
 {
     public function home()
     {
-        //$oeuvres = Oeuvre::all();
-        $oeuvres = DB::select("SELECT * FROM `oeuvres`");
+        $oeuvres = DB::select("SELECT * FROM `oeuvres` WHERE actif = 1;");
         return view('home', compact('oeuvres'));
     }
 

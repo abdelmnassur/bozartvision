@@ -25,7 +25,7 @@ return new class extends Migration
             $table->text('description');
             $table->integer('largeur');
             $table->integer('longeur');
-            $table->boolean('status')->default(0);
+            $table->boolean('actif')->default(0);
             $table->integer('nombre_exemplaire')->default(1);
             $table->date('date_recent')->nullable();
             $table->decimal('prix',10,2);

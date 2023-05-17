@@ -16,6 +16,7 @@ class Commentaire extends Model
         'user_id',
         'oeuvre_id',
         'commentaire',
+        'actif',
     ];
     use HasFactory;
 

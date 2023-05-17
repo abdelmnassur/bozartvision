@@ -23,7 +23,7 @@ class Oeuvre extends Model
         'nombre_exemplaire',
         'description',
         'categorie_id',
-        'status',
+        'actif',
         'appreciation',
         'date_recent',
     ];

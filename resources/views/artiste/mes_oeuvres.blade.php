@@ -55,11 +55,11 @@
                                     <td>{{ $oeuvre->titre }}</td>
                                     <td>{{ $oeuvre->prix }}</td>
                                     <td>{{ $oeuvre->nombre_exemplaire }}</td>
-                                    <td>{{ $oeuvre->largeur }}x{{ $oeuvre->longeur }} cm</td>
+                                    <td>{{ $oeuvre->largeur }}x{{ $oeuvre->longeur }}</td>
 
                                     <td>
 
-                                        @if ($oeuvre->status == 1)
+                                        @if ($oeuvre->actif == 1)
                                             <button
                                                 onclick="desactiverOeuvre({{ $oeuvre->id }}, '{{ $oeuvre->titre }}');"
                                                 class="btn btn-success">

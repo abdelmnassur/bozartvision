@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->date('date_de_naissanse')->nullable();
             $table->string('photo')->nullable();
-            $table->boolean('status')->default(1);
+            $table->boolean('actif')->default(1);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->enum('type',['root','admin','artiste','user'])->default('user');

@@ -455,7 +455,6 @@
         function modifierGenre(idG, genre)
         {
             document.getElementById("idG").setAttribute("value", idG);
-            document.getElementById("genre").setAttribute("value", genre);
             $('#Genre').text(genre);
             $('#genreModal').modal('show');
         }

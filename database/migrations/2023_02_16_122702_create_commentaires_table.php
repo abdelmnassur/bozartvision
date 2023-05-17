@@ -21,6 +21,7 @@ return new class extends Migration
             $table->foreign('oeuvre_id')->references('id')->on('oeuvres')->onDelete('cascade');
 
             $table->text('commentaire');
+            $table->boolean('actif')->default(1);
             $table->timestamps();
         });
     }
