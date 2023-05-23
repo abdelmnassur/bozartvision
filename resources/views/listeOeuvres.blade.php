@@ -4,7 +4,7 @@
         <div class="collection-tab-inner">
             <div class="container">
                 <div class="section-header text-center">
-                    <h2 class="section-heading primary-color">Les oeuvres</h2>
+                    <h2 class="section-heading primary-color">Tous les oeuvres</h2>
                 </div>
                 <div class="row">
 
@@ -48,9 +48,6 @@
                         </div>
                     @endforeach
                     
-                </div>
-                <div class="view-all text-center" data-aos="fade-up" data-aos-duration="700">
-                    <a class="btn-primary" href="#">VIEW ALL</a>
                 </div>
             </div>
         </div>

@@ -15,7 +15,8 @@ class MainController extends Controller
 {
     public function home()
     {
-        $oeuvres = DB::select("SELECT * FROM `oeuvres` WHERE actif = 1;");
+        $actif = 1;
+        $oeuvres = Oeuvre::where('actif', $actif)->get();
         return view('home', compact('oeuvres'));
     }
 

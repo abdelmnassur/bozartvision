@@ -42,9 +42,10 @@
                             <tr>
                                 <th>IMAGE</th>
                                 <th>TITRES</th>
+                                <th>CATEGORIE</th>
                                 <th>PRIX $</th>
-                                <th>NOMBRE</th>
-                                <th>DIMENSIONS</th>
+                                <th>EX</th>
+                                <th>TAILLE</th>
                                 <th>ACTION</th>
                             </tr>
                         </thead>
@@ -53,6 +54,7 @@
                                 <tr>
                                     <td><img src="{{ asset('storage/image/oeuvres/'.$oeuvre->image) }}" style="border-radius: 15%;width: 50px;height: 50px;"></td>
                                     <td>{{ $oeuvre->titre }}</td>
+                                    <td>{{ $oeuvre->categorie->categorie }}</td>
                                     <td>{{ $oeuvre->prix }}</td>
                                     <td>{{ $oeuvre->nombre_exemplaire }}</td>
                                     <td>{{ $oeuvre->largeur }}x{{ $oeuvre->longeur }}</td>

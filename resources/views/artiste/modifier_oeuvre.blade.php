@@ -16,7 +16,7 @@
                     @if ( $oeuvre->image)
                         <div class="row justify-content-center" style="align-content: center">
 
-                            <img src="{{ asset('storage/image/oeuvres/'.$oeuvre->image) }} ">
+                            <img src="{{ asset('storage/image/oeuvres/'.$oeuvre->image) }}">
 
                         </div>
 

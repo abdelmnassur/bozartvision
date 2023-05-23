@@ -19,7 +19,7 @@ class ArtisteController extends Controller
         $artiste = DB::select("SELECT * FROM `artistes` WHERE user_id = $user;");
         $artiste_id = $artiste[0]->id;
 
-        $oeuvres = DB::select("SELECT * FROM `oeuvres` WHERE artiste_id = $artiste_id ;");
+        $oeuvres = Oeuvre::where('artiste_id', $artiste_id)->get();
         return view('artiste/artiste_dashboard', compact('oeuvres'));
     }
 
@@ -97,7 +97,7 @@ class ArtisteController extends Controller
         $artiste = DB::select("SELECT * FROM `artistes` WHERE user_id = $user;");
         $artiste_id = $artiste[0]->id;
 
-        $oeuvres = DB::select("SELECT * FROM `oeuvres` WHERE artiste_id = $artiste_id ;");
+        $oeuvres = Oeuvre::where('artiste_id', $artiste_id)->get();
 
         return view('artiste/mes_oeuvres', compact('oeuvres'));
     }

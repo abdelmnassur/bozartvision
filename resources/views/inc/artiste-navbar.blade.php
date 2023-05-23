@@ -31,7 +31,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('mes_oeuvres') }}">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Mes oeuvres d'arts</span>
+                    <span>Mes œuvres d'arts</span>
                 </a>
             </li>
 
