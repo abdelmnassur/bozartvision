@@ -88,7 +88,7 @@
                         <div class="row">
                             <div class="col-lg-7 col-md-12 col-12">
                                 <div class="desc-content">
-                                    <h4 class="heading_18 mb-3"> C'est quoi {{ $oeuvre->titre }}?</h4>
+                                    <h4 class="heading_18 mb-3"> C'est quoi {{ $oeuvre->titre }} ?</h4>
                                     <p class="text_16 mb-4">{{ $oeuvre->description }}.</p>
                                 </div>
                             </div>

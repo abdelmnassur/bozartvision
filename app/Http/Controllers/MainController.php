@@ -16,7 +16,7 @@ class MainController extends Controller
     public function home()
     {
         $actif = 1;
-        $oeuvres = Oeuvre::where('actif', $actif)->get();
+        $oeuvres = Oeuvre::where('actif', $actif)->where('nombre_exemplaire', '>', 0)->paginate(4);
         return view('home', compact('oeuvres'));
     }
 

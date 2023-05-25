@@ -191,8 +191,7 @@
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal"  onClick="event.preventDefault(); document.getElementById('deconnection').submit()">
-                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Déconnexion
+                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Déconnexion
                 </a>
                 <form action="{{ route('logout') }}" method="post" id="deconnection">
                     @csrf

@@ -333,9 +333,30 @@
             </nav>
           </div>
           <div class="col-lg-2">
-            <div class="member-signup d-flex justify-content-end">
-              <a href="about-us.html" class="btn-member text-white">Be a member</a>
+
+          @guest
+            <div class="member-signup d-flex justify-content-around">
+                
+              <a href="{{ route('login') }}" class="btn-member text-white" style="margin-right: 3px">Connexion</a>
+              <a href="{{ route('register') }}" class="btn-member text-white"style="margin-left: 3px">Inscription</a>
+
             </div>
+          @else
+
+            <div class="member-signup d-flex justify-content-around">
+                
+              <a href="#" class="btn-member text-white" style="margin-right: 3px">Mon compte</a>
+              <a href="#" class="btn-member text-white"style="margin-left: 3px" onClick="event.preventDefault(); document.getElementById('deconnection').submit()">Déconnexion</a>
+
+              <form action="{{ route('logout') }}" method="post" id="deconnection">
+                @csrf
+                @method('post')
+              </form>
+              
+            </div>
+              
+          @endguest
+
           </div>
         </div>
       </div>
