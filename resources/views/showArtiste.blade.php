@@ -1,4 +1,4 @@
-<x-basic>
+<x-home-basic>
     <main id="MainContent" class="content-for-layout">
         <div class="product-page mt-100">
             <div class="container">
@@ -136,4 +136,4 @@
         </div>
         <!-- product tab end -->
     </main>
-</x-basic>
+</x-home-basic>

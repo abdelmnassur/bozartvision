@@ -1,10 +1,10 @@
-<x-basic>
+<x-home-basic>
     <!-- collection start -->
     <div class="featured-collection mt-100 overflow-hidden">
         <div class="collection-tab-inner">
             <div class="container">
                 <div class="section-header text-center">
-                    <h2 class="section-heading primary-color">Tous les oeuvres</h2>
+                    <h2 class="section-heading primary-color">Tous les œuvres </h2>
                 </div>
                 <div class="row">
 
@@ -17,9 +17,9 @@
                                         <img width="300" height="400" class="primary-img" src="{{ asset('storage/image/oeuvres/'.$oeuvre->image) }}" alt="product-img">
                                     </a>
 
-                                    <div class="product-badge">
+                                    {{-- <div class="product-badge">
                                         <span class="badge-label badge-percentage rounded">-44%</span>
-                                    </div>
+                                    </div> --}}
 
                                     <div class="product-card-action product-card-action-2 justify-content-center">
 
@@ -53,4 +53,4 @@
         </div>
     </div>
     <!-- collection end -->
-</x-basic>
+</x-home-basic>

@@ -1,4 +1,4 @@
-<x-basic>
+<x-home-basic>
     <main id="MainContent" class="content-for-layout">
         <div class="product-page mt-100">
             <div class="container">
@@ -45,11 +45,11 @@
                             
                             <h4 class="product-vendor product-meta mb-3"> <strong class="label">Categorie :</strong> {{ $oeuvre->categorie->categorie }}</h4>
                             
-                            <h4 class="product-vendor product-meta mb-3">
+                            {{-- <h4 class="product-vendor product-meta mb-3">
                                 <strong class="label"></strong> <br>
                                 <p>{{ $oeuvre->description }}</p>
                             </h4>
-                            
+                             --}}
                             <h4 class="product-vendor product-meta mb-3"> Nombre d'exemplaire : {{ $oeuvre->nombre_exemplaire }}
                             
                             <h4 class="product-vendor product-meta mb-3"> <strong class="label">Taille :</strong> {{ $oeuvre->largeur }}X{{ $oeuvre->largeur }} cm</h4>
@@ -415,4 +415,4 @@
         </div> --}}
         <!-- you may also lik end -->
     </main>
-</x-basic>
+</x-home-basic>

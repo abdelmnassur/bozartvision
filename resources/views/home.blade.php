@@ -105,16 +105,16 @@
                             <div class="product-card">
                                 <div class="product-card-img">
                                     <a class="hover-switch" href="{{ route('showOeuvre',$oeuvre->id ) }}">
-                                        <img class="secondary-img" src="{{ asset('storage/image/oeuvres/'.$oeuvre->image) }}"
+                                        <img width="300" height="400" class="secondary-img" src="{{ asset('storage/image/oeuvres/'.$oeuvre->image) }}"
                                             alt="product-img">
-                                        <img class="primary-img" src="{{ asset('storage/image/oeuvres/'.$oeuvre->image) }}"
+                                        <img width="300" height="400" class="primary-img" src="{{ asset('storage/image/oeuvres/'.$oeuvre->image) }}"
                                             alt="product-img">
                                     </a>
 
-                                    <div class="product-badge">
+                                    {{-- <div class="product-badge">
                                         <span class="badge-label badge-new rounded">Featured</span>
                                         <span class="badge-label badge-percentage rounded">-44%</span>
-                                    </div>
+                                    </div> --}}
 
                                     <div class="product-card-action product-card-action-2 justify-content-center">
                                         <a href="#quickview-modal" class="action-card action-quickview"
@@ -130,11 +130,10 @@
                                 </div>
                                 <div class="product-card-details">
                                     <h3 class="product-card-title">
-                                        <a href="collection-left-sidebar.html">Best trucker</a>
+                                        <a href="collection-left-sidebar.html">{{ $oeuvre->titre }}</a>
                                     </h3>
                                     <div class="product-card-price">
-                                        <span class="card-price-regular">$1529</span>
-                                        <span class="card-price-compare text-decoration-line-through">$1759</span>
+                                        <span class="card-price-regular">${{ $oeuvre->prix }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -142,7 +141,7 @@
                     @endforeach
                 </div>
                 <div class="view-all text-center" data-aos="fade-up" data-aos-duration="700">
-                    <a class="btn-primary" href="#">VIEW ALL</a>
+                    <a class="btn-primary" href="{{ route('listeOeuvres') }}">TOUS LES ŒUVRES</a>
                 </div>
             </div>
         </div>
