@@ -156,7 +156,7 @@
                     <li class="footer-menu-item"><a href="about-us.html">Privacy policy</a></li>
                     <li class="footer-menu-item"><a href="about-us.html">Terms & Conditions</a></li>
                 </ul>
-                <p class="copyright footer-text">©<span class="current-year"></span> Spree Themes.</p>
+                <p class="copyright footer-text">©<span class="current-year"></span> bozartvision</p>
             </div>
         </div>
     </div>

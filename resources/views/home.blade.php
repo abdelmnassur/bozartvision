@@ -1,49 +1,49 @@
 <x-home-basic>
-      <!-- slideshow start -->
-      <div class="slideshow-section position-relative">
-        <div class="slideshow-active activate-slider" data-slick='{
-          "slidesToShow": 1, 
-          "slidesToScroll": 1, 
-          "dots": true,
-          "arrows": true,
-          "responsive": [
-            {
-              "breakpoint": 768,
-              "settings": {
-                "arrows": false
-              }
+    <!-- slideshow start -->
+    <div class="slideshow-section position-relative">
+    <div class="slideshow-active activate-slider" data-slick='{
+        "slidesToShow": 1, 
+        "slidesToScroll": 1, 
+        "dots": true,
+        "arrows": true,
+        "responsive": [
+        {
+            "breakpoint": 768,
+            "settings": {
+            "arrows": false
             }
-          ]
-            }'>
-            @foreach ( $oeuvres as $oeuvre )
-                <div class="slide-item position-relative overlay">
-                    <img width="1920" height="600" class="slide-img d-none d-md-block" src="{{ asset('storage/image/oeuvres/'.$oeuvre->image) }}" alt="slide-1">
-                    <img width="1920" height="600" class="slide-img d-md-none" src="{{ asset('storage/image/oeuvres/'.$oeuvre->image) }}" alt="slide-1">
-                    <div class="content-absolute content-slide">
-                    <div class="container height-inherit d-flex align-items-center justify-content-start">
-                        <div class="content-box slide-content py-4">
-                        <p class="slide-text heading_34 text-white animate__animated animate__fadeInUp"
-                            data-animation="animate__animated animate__fadeInUp">
-                            {{ $oeuvre->titre }}
-                        </p>
-                        <h2 class="slide-heading heading_72 text-white animate__animated animate__fadeInUp"
-                            data-animation="animate__animated animate__fadeInUp">
-                            bozartsvision
-                        </h2>
-                        
-                        <a class="btn-primary slide-btn animate__animated animate__fadeInUp"
-                            href="collection-left-sidebar.html" data-animation="animate__animated animate__fadeInUp">COMMANDEZ MAINTENANT</a>
-                        </div>
-                    </div>
+        }
+        ]
+        }'>
+        @foreach ( $oeuvres as $oeuvre )
+            <div class="slide-item position-relative overlay">
+                <img width="1920" height="600" class="slide-img d-none d-md-block" src="{{ asset('storage/image/oeuvres/'.$oeuvre->image) }}" alt="slide-1">
+                <img width="1920" height="600" class="slide-img d-md-none" src="{{ asset('storage/image/oeuvres/'.$oeuvre->image) }}" alt="slide-1">
+                <div class="content-absolute content-slide">
+                <div class="container height-inherit d-flex align-items-center justify-content-start">
+                    <div class="content-box slide-content py-4">
+                    <p class="slide-text heading_34 text-white animate__animated animate__fadeInUp"
+                        data-animation="animate__animated animate__fadeInUp">
+                        {{ $oeuvre->titre }}
+                    </p>
+                    <h2 class="slide-heading heading_72 text-white animate__animated animate__fadeInUp"
+                        data-animation="animate__animated animate__fadeInUp">
+                        bozartvision
+                    </h2>
+                    
+                    <a class="btn-primary slide-btn animate__animated animate__fadeInUp"
+                        href="collection-left-sidebar.html" data-animation="animate__animated animate__fadeInUp">COMMANDEZ MAINTENANT</a>
                     </div>
                 </div>
-            @endforeach
+                </div>
+            </div>
+        @endforeach
 
-        </div>
-        <div class="activate-arrows arrows-white"></div>
-        <div class="activate-dots dots-white"></div>
-      </div>
-      <!-- slideshow end -->
+    </div>
+    <div class="activate-arrows arrows-white"></div>
+    <div class="activate-dots dots-white"></div>
+    </div>
+    <!-- slideshow end -->
 
     <!-- trusted badge start -->
     <div class="trusted-section mt-100 overflow-hidden">

@@ -5,7 +5,7 @@
         <div class="row align-items-center">
           <div class="col-lg-3 col-md-4 col-4">
             <div class="header-logo">
-              <a href="index-tools.html" class="logo-main">
+              <a href="{{ route('home')}}" class="logo-main">
                 <img src="{{ asset('template1/img/logo.png') }}" loading="lazy" alt="bisum">
               </a>
             </div>
@@ -101,234 +101,42 @@
           <div class="col-lg-10">
             <nav class="site-navigation">
               <ul class="main-menu list-unstyled">
-                <li class="menu-list-item nav-item has-dropdown active">
-                  <div class="mega-menu-header">
-                    <a class="nav-link" href="index.html">
-                      Home
-                    </a>
-                    <span class="open-submenu">
-                      <svg class="icon icon-dropdown" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <polyline points="6 9 12 15 18 9"></polyline>
-                      </svg>
-                    </span>
-                  </div>
-                  <div class="submenu-transform submenu-transform-desktop">
-                    <ul class="submenu list-unstyled">
-                      <li class="menu-list-item nav-item-sub">
-                        <a class="nav-link-sub nav-text-sub" href="index.html">Home 1</a>
-                      </li>
-                      <li class="menu-list-item nav-item-sub">
-                        <a class="nav-link-sub nav-text-sub" href="index-shoe.html">Home
-                          2</a>
-                      </li>
-                      <li class="menu-list-item nav-item-sub">
-                        <a class="nav-link-sub nav-text-sub" href="index-bag.html">Home
-                          3</a>
-                      </li>
-                      <li class="menu-list-item nav-item-sub">
-                        <a class="nav-link-sub nav-text-sub" href="index-tools.html">Home
-                          4</a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li class="menu-list-item nav-item has-megamenu">
-                  <div class="mega-menu-header">
-                    <a class="nav-link" href="collection-left-sidebar.html">
-                      Shop
-                    </a>
-                    <span class="open-submenu">
-                      <svg class="icon icon-dropdown" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <polyline points="6 9 12 15 18 9"></polyline>
-                      </svg>
-                    </span>
-                  </div>
-                  <div class="submenu-transform submenu-transform-desktop">
-                    <div class="container">
-                      <ul class="submenu megamenu-container list-unstyled">
-                        <li class="menu-list-item nav-item-sub">
-                          <div class="mega-menu-header">
-                            <a class="nav-link-sub nav-text-sub megamenu-heading" href="collection-left-sidebar.html">
-                              CATEGORY PAGES
-                            </a>
-                          </div>
-                          <div class="submenu-transform megamenu-transform">
-                            <ul class="megamenu list-unstyled">
-                              <li class="menu-list-item nav-item-sub">
-                                <a class="nav-link-sub nav-text-sub" href="collection-left-sidebar.html">With Left
-                                  Sidebar</a>
-                              </li>
-                              <li class="menu-list-item nav-item-sub">
-                                <a class="nav-link-sub nav-text-sub" href="collection-right-sidebar.html">With Right
-                                  Sidebar</a>
-                              </li>
-                              <li class="menu-list-item nav-item-sub">
-                                <a class="nav-link-sub nav-text-sub" href="collection-left-sidebar.html">3 Column
-                                  Layout</a>
-                              </li>
-                              <li class="menu-list-item nav-item-sub">
-                                <a class="nav-link-sub nav-text-sub" href="collection-without-sidebar.html">4 Column
-                                  Layout</a>
-                              </li>
-                              <li class="menu-list-item nav-item-sub">
-                                <a class="nav-link-sub nav-text-sub" href="collection-without-sidebar.html">Without
-                                  Sidebar</a>
-                              </li>
-                            </ul>
-                          </div>
-                        </li>
-                        <li class="menu-list-item nav-item-sub">
-                          <div class="mega-menu-header d-flex align-items-center justify-content-between">
-                            <a class="nav-link-sub nav-text-sub megamenu-heading"
-                              href="collection-right-sidebar.html">
-                              PRODUCT PAGES
-                            </a>
-                          </div>
-                          <div class="submenu-transform megamenu-transform">
-                            <ul class="megamenu list-unstyled">
-                              <li class="menu-list-item nav-item-sub">
-                                <a class="nav-link-sub nav-text-sub" href="product.html">Simple Product</a>
-                              </li>
-                              <li class="menu-list-item nav-item-sub">
-                                <a class="nav-link-sub nav-text-sub" href="product.html">Variable Product</a>
-                              </li>
-                              <li class="menu-list-item nav-item-sub">
-                                <a class="nav-link-sub nav-text-sub" href="product.html">Sale Product</a>
-                              </li>
-                              <li class="menu-list-item nav-item-sub">
-                                <a class="nav-link-sub nav-text-sub" href="product.html">Featured & On Sale</a>
-                              </li>
-                              <li class="menu-list-item nav-item-sub">
-                                <a class="nav-link-sub nav-text-sub" href="product-2.html">Tab Inside</a>
-                              </li>
-                            </ul>
-                          </div>
-                        </li>
-                        <li class="menu-list-item nav-item-sub">
-                          <div class="mega-menu-header d-flex align-items-center justify-content-between">
-                            <a class="nav-link-sub nav-text-sub megamenu-heading" href="index.html">
-                              PRODUCT LAYOUTS
-                            </a>
-                          </div>
-                          <div class="submenu-transform megamenu-transform">
-                            <ul class="megamenu list-unstyled">
-                              <li class="menu-list-item nav-item-sub">
-                                <a class="nav-link-sub nav-text-sub" href="product-2.html">Grid Images</a>
-                              </li>
-                              <li class="menu-list-item nav-item-sub">
-                                <a class="nav-link-sub nav-text-sub" href="product.html">Vertical Thumb</a>
-                              </li>
-                              <li class="menu-list-item nav-item-sub">
-                                <a class="nav-link-sub nav-text-sub" href="product.html">Gallery Type</a>
-                              </li>
-                              <li class="menu-list-item nav-item-sub">
-                                <a class="nav-link-sub nav-text-sub" href="product.html">Product Width Layout</a>
-                              </li>
-                              <li class="menu-list-item nav-item-sub">
-                                <a class="nav-link-sub nav-text-sub" href="product.html">Sticky Gallery</a>
-                              </li>
-                            </ul>
-                          </div>
-                        </li>
-                        <li class="menu-list-item nav-item-sub">
-                          <div class="mega-menu-header d-flex align-items-center justify-content-between">
-                            <a class="mega-menu-img nav-link-sub nav-text-sub" href="collection-left-sidebar.html">
-                              <img class="menu-img" src="{{ asset('template1/img/menu/1.jpg')}}" alt="img">
-                              <h2 class="img-menu-heading text_16 mt-2">Featured
-                                Collection</h2>
-                              <div class="img-menu-action text_12 bg-transparent p-0">
-                                <span>DISCOVER NOW</span>
-                                <span>
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="18" fill="#000"
-                                    class="icon-right-long" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
-                                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
-                                  </svg>
-                                </span>
-                              </div>
-                            </a>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </li>
-                <li class="menu-list-item nav-item has-dropdown">
-                  <div class="mega-menu-header">
-                    <a class="nav-link" href="blog.html">Blog</a>
-                    <span class="open-submenu">
-                      <svg class="icon icon-dropdown" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <polyline points="6 9 12 15 18 9"></polyline>
-                      </svg>
-                    </span>
-                  </div>
-                  <div class="submenu-transform submenu-transform-desktop">
-                    <ul class="submenu list-unstyled">
-                      <li class="menu-list-item nav-item-sub">
-                        <a class="nav-link-sub nav-text-sub" href="blog.html">Blog</a>
-                      </li>
-                      <li class="menu-list-item nav-item-sub">
-                        <a class="nav-link-sub nav-text-sub" href="article.html">Blog
-                          Details</a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li class="menu-list-item nav-item has-dropdown">
-                  <div class="mega-menu-header">
-                    <a class="nav-link" href="about-us.html">
-                      Pages
-                    </a>
-                    <span class="open-submenu">
-                      <svg class="icon icon-dropdown" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <polyline points="6 9 12 15 18 9"></polyline>
-                      </svg>
-                    </span>
-                  </div>
-                  <div class="submenu-transform submenu-transform-desktop">
-                    <ul class="submenu list-unstyled">
-                      <li class="menu-list-item nav-item-sub">
-                        <a class="nav-link-sub nav-text-sub" href="about-us.html">About
-                          Us</a>
-                      </li>
-                      <li class="menu-list-item nav-item-sub">
-                        <a class="nav-link-sub nav-text-sub" href="contact.html">Contact</a>
-                      </li>
-                      <li class="menu-list-item nav-item-sub">
-                        <a class="nav-link-sub nav-text-sub" href="faq.html">FAQ</a>
-                      </li>
-                      <li class="menu-list-item nav-item-sub">
-                        <a class="nav-link-sub nav-text-sub" href="404.html">404 page</a>
-                      </li>
-                      <li class="menu-list-item nav-item-sub">
-                        <a class="nav-link-sub nav-text-sub" href="login.html">Login</a>
-                      </li>
-                      <li class="menu-list-item nav-item-sub">
-                        <a class="nav-link-sub nav-text-sub" href="register.html">Register</a>
-                      </li>
-                      <li class="menu-list-item nav-item-sub">
-                        <a class="nav-link-sub nav-text-sub" href="wishlist.html">Wishlist</a>
-                      </li>
-                      <li class="menu-list-item nav-item-sub">
-                        <a class="nav-link-sub nav-text-sub" href="cart.html">Cart</a>
-                      </li>
-                      <li class="menu-list-item nav-item-sub">
-                        <a class="nav-link-sub nav-text-sub" href="checkout.html">Checkout</a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
+
                 <li class="menu-list-item nav-item">
-                  <a class="nav-link" href="contact.html">Contact</a>
+                  <a class="nav-link" href="{{ route('home')}}">Acceuil</a>
                 </li>
+
+                <li class="menu-list-item nav-item">
+                  <a class="nav-link" href="{{ route('listeOeuvres')}}">Œuvres</a>
+                </li>
+
+                <li class="menu-list-item nav-item has-dropdown">
+                  <div class="mega-menu-header">
+                    <a class="nav-link" href="blog.html">Connexion</a>
+                    <span class="open-submenu">
+                      <svg class="icon icon-dropdown" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="submenu-transform submenu-transform-desktop">
+                    <ul class="submenu list-unstyled">
+                      <li class="menu-list-item nav-item-sub">
+                        <a class="nav-link-sub nav-text-sub" href="blog.html">Connexion</a>
+                      </li>
+                      <li class="menu-list-item nav-item-sub">
+                        <a class="nav-link-sub nav-text-sub" href="article.html">Inscription</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+
+                <li class="menu-list-item nav-item">
+                  <a class="nav-link" href="#">Contact</a>
+                </li>
+
               </ul>
             </nav>
           </div>
@@ -336,7 +144,7 @@
 
           @guest
             <div class="member-signup d-flex justify-content-around">
-                
+              
               <a href="{{ route('login') }}" class="btn-member text-white" style="margin-right: 3px">Connexion</a>
               <a href="{{ route('register') }}" class="btn-member text-white"style="margin-left: 3px">Inscription</a>
 
@@ -352,7 +160,7 @@
                 @csrf
                 @method('post')
               </form>
-              
+
             </div>
               
           @endguest
@@ -375,282 +183,15 @@
         <div class="offcanvas-body p-0 d-flex flex-column justify-content-between">
         <nav class="site-navigation">
             <ul class="main-menu list-unstyled">
-            <li class="menu-list-item nav-item has-dropdown active">
-                <div class="mega-menu-header">
-                <a class="nav-link active" href="index.html">
-                    Home
-                </a>
-                <span class="open-submenu">
-                    <svg class="icon icon-dropdown" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" >
-                    <polyline points="9 18 15 12 9 6"></polyline>
-                    </svg>
-                </span>
-                </div>
-                <div class="submenu-transform submenu-transform-desktop">
-                <div class="offcanvas-header border-btm-black">
-                    <h5 class="drawer-heading btn-menu-back d-flex align-items-center">
-                    <svg class="icon icon-menu-back" xmlns="http://www.w3.org/2000/svg" width="40" height="40"
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" >
-                        <polyline points="15 18 9 12 15 6"></polyline>
-                    </svg>
-                    <span class="menu-back-text">Home</span>
-                    </h5>
-                </div>
-                <ul class="submenu list-unstyled">
-                    <li class="menu-list-item nav-item-sub"><a class="nav-link-sub nav-text-sub" href="index.html">Home
-                        1</a>
-                    </li>
-                    <li class="menu-list-item nav-item-sub"><a class="nav-link-sub nav-text-sub"
-                        href="index-shoe.html">Home
-                        2</a>
-                    </li>
-                    <li class="menu-list-item nav-item-sub"><a class="nav-link-sub nav-text-sub"
-                        href="index-bag.html">Home
-                        3</a>
-                    </li>
-                    <li class="menu-list-item nav-item-sub"><a class="nav-link-sub nav-text-sub"
-                        href="index-tools.html">Home
-                        4</a>
-                    </li>
-                </ul>
-                </div>
-            </li>
-            <li class="menu-list-item nav-item has-megamenu">
-                <div class="mega-menu-header">
-                <a class="nav-link" href="collection-left-sidebar.html">
-                    Shop
-                </a>
-                <span class="open-submenu">
-                    <svg class="icon icon-dropdown" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" >
-                    <polyline points="9 18 15 12 9 6"></polyline>
-                    </svg>
-                </span>
-                </div>
-                <div class="submenu-transform submenu-transform-desktop">
-                <div class="container">
-                    <div class="offcanvas-header border-btm-black">
-                    <h5 class="drawer-heading btn-menu-back d-flex align-items-center">
-                        <svg class="icon icon-menu-back" xmlns="http://www.w3.org/2000/svg" width="40" height="40"
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" >
-                        <polyline points="15 18 9 12 15 6"></polyline>
-                        </svg>
-                        <span class="menu-back-text">Shop</span>
-                    </h5>
-                    </div>
-                    <ul class="submenu megamenu-container list-unstyled">
-                    <li class="menu-list-item nav-item-sub">
-                        <div class="mega-menu-header">
-                        <a class="nav-link-sub nav-text-sub megamenu-heading" href="collection-left-sidebar.html">
-                            Category Pages
-                        </a>
-                        <span class="open-submenu">
-                            <svg class="icon icon-dropdown" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" >
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                            </svg>
-                        </span>
-                        </div>
-                        <div class="submenu-transform">
-                        <div class="offcanvas-header border-btm-black">
-                            <h5 class="drawer-heading btn-menu-back d-flex align-items-center">
-                            <svg class="icon icon-menu-back" xmlns="http://www.w3.org/2000/svg" width="40" height="40"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" >
-                                <polyline points="15 18 9 12 15 6"></polyline>
-                            </svg>
-                            <span class="menu-back-text">Category Pages</span>
-                            </h5>
-                        </div>
-                        <ul class="megamenu list-unstyled megamenu-container">
-                            <li class="menu-list-item nav-item-sub">
-                            <a class="nav-link-sub nav-text-sub" href="collection-left-sidebar.html">With Left
-                                Sidebar</a>
-                            </li>
-                            <li class="menu-list-item nav-item-sub">
-                            <a class="nav-link-sub nav-text-sub" href="collection-right-sidebar.html">With Right
-                                Sidebar</a>
-                            </li>
-                            <li class="menu-list-item nav-item-sub">
-                            <a class="nav-link-sub nav-text-sub" href="collection-left-sidebar.html">3 Column
-                                Layout</a>
-                            </li>
-                            <li class="menu-list-item nav-item-sub">
-                            <a class="nav-link-sub nav-text-sub" href="collection-without-sidebar.html">4 Column
-                                Layout</a>
-                            </li>
-                            <li class="menu-list-item nav-item-sub">
-                            <a class="nav-link-sub nav-text-sub" href="collection-without-sidebar.html">Without
-                                Sidebar</a>
-                            </li>
-                        </ul>
-                        </div>
-                    </li>
-                    <li class="menu-list-item nav-item-sub">
-                        <div class="mega-menu-header">
-                        <a class="nav-link-sub nav-text-sub megamenu-heading" href="index.html">
-                            Product Pages
-                        </a>
-                        <span class="open-submenu">
-                            <svg class="icon icon-dropdown" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" >
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                            </svg>
-                        </span>
-                        </div>
-                        <div class="submenu-transform">
-                        <div class="offcanvas-header border-btm-black">
-                            <h5 class="drawer-heading btn-menu-back d-flex align-items-center">
-                            <svg class="icon icon-menu-back" xmlns="http://www.w3.org/2000/svg" width="40" height="40"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" >
-                                <polyline points="15 18 9 12 15 6"></polyline>
-                            </svg>
-                            <span class="menu-back-text">Product Pages</span>
-                            </h5>
-                        </div>
-                        <ul class="megamenu list-unstyled">
-                            <li class="menu-list-item nav-item-sub">
-                            <a class="nav-link-sub nav-text-sub" href="product.html">Simple Product</a>
-                            </li>
-                            <li class="menu-list-item nav-item-sub">
-                            <a class="nav-link-sub nav-text-sub" href="product.html">Variable Product</a>
-                            </li>
-                            <li class="menu-list-item nav-item-sub">
-                            <a class="nav-link-sub nav-text-sub" href="product.html">Sale Product</a>
-                            </li>
-                            <li class="menu-list-item nav-item-sub">
-                            <a class="nav-link-sub nav-text-sub" href="product.html">Featured & On Sale</a>
-                            </li>
-                            <li class="menu-list-item nav-item-sub">
-                            <a class="nav-link-sub nav-text-sub" href="product-2.html">Tab
-                                Inside</a>
-                            </li>
-                        </ul>
-                        </div>
-                    </li>
-                    <li class="menu-list-item nav-item-sub">
-                        <div class="mega-menu-header">
-                        <a class="nav-link-sub nav-text-sub megamenu-heading" href="index.html">
-                            Product Layouts
-                        </a>
-                        <span class="open-submenu">
-                            <svg class="icon icon-dropdown" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" >
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                            </svg>
-                        </span>
-                        </div>
-                        <div class="submenu-transform">
-                        <div class="offcanvas-header border-btm-black">
-                            <h5 class="drawer-heading btn-menu-back d-flex align-items-center">
-                            <svg class="icon icon-menu-back" xmlns="http://www.w3.org/2000/svg" width="40" height="40"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" >
-                                <polyline points="15 18 9 12 15 6"></polyline>
-                            </svg>
-                            <span class="menu-back-text">Product Layouts</span>
-                            </h5>
-                        </div>
-                        <ul class="megamenu list-unstyled">
-                            <li class="menu-list-item nav-item-sub">
-                            <a class="nav-link-sub nav-text-sub" href="product-2.html">Grid Images</a>
-                            </li>
-                            <li class="menu-list-item nav-item-sub">
-                            <a class="nav-link-sub nav-text-sub" href="product.html">Vertical Thumb</a>
-                            </li>
-                            <li class="menu-list-item nav-item-sub">
-                            <a class="nav-link-sub nav-text-sub" href="product.html">Gallery Type</a>
-                            </li>
-                            <li class="menu-list-item nav-item-sub">
-                            <a class="nav-link-sub nav-text-sub" href="product.html">Product Width Layout</a>
-                            </li>
-                            <li class="menu-list-item nav-item-sub">
-                            <a class="nav-link-sub nav-text-sub" href="product.html">Sticky Gallery</a>
-                            </li>
-                        </ul>
-                        </div>
-                    </li>
-                    <li class="menu-list-item nav-item-sub">
-                        <div class="mega-menu-header">
-                        <a class="nav-link-sub nav-text-sub megamenu-heading" href="collection-left-sidebar.html">
-                            Featured Collection
-                        </a>
-                        </div>
-                    </li>
-                    </ul>
-                </div>
-                </div>
-            </li>
-            <li class="menu-list-item nav-item">
-                <a class="nav-link" href="blog.html">Blog</a>
-            </li>
-            <li class="menu-list-item nav-item has-dropdown">
-                <div class="mega-menu-header">
-                <a class="nav-link active" href="about-us.html">
-                    Pages
-                </a>
-                <span class="open-submenu">
-                    <svg class="icon icon-dropdown" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" >
-                    <polyline points="9 18 15 12 9 6"></polyline>
-                    </svg>
-                </span>
-                </div>
-                <div class="submenu-transform submenu-transform-desktop">
-                <div class="offcanvas-header border-btm-black">
-                    <h5 class="drawer-heading btn-menu-back d-flex align-items-center">
-                    <svg class="icon icon-menu-back" xmlns="http://www.w3.org/2000/svg" width="40" height="40"
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" >
-                        <polyline points="15 18 9 12 15 6"></polyline>
-                    </svg>
-                    <span class="menu-back-text">Pages</span>
-                    </h5>
-                </div>
-                <ul class="submenu list-unstyled">
-                    <li class="menu-list-item nav-item-sub">
-                    <a class="nav-link-sub nav-text-sub" href="about-us.html">About Us</a>
-                    </li>
-                    <li class="menu-list-item nav-item-sub">
-                    <a class="nav-link-sub nav-text-sub" href="contact.html">Contact</a>
-                    </li>
-                    <li class="menu-list-item nav-item-sub">
-                    <a class="nav-link-sub nav-text-sub" href="faq.html">FAQ</a>
-                    </li>
-                    <li class="menu-list-item nav-item-sub">
-                    <a class="nav-link-sub nav-text-sub" href="404.html">404 page</a>
-                    </li>
-                    <li class="menu-list-item nav-item-sub">
-                    <a class="nav-link-sub nav-text-sub" href="login.html">Login</a>
-                    </li>
-                    <li class="menu-list-item nav-item-sub">
-                    <a class="nav-link-sub nav-text-sub" href="register.html">Register</a>
-                    </li>
-                    <li class="menu-list-item nav-item-sub">
-                    <a class="nav-link-sub nav-text-sub" href="wishlist.html">Wishlist</a>
-                    </li>
-                    <li class="menu-list-item nav-item-sub">
-                    <a class="nav-link-sub nav-text-sub" href="cart.html">Cart</a>
-                    </li>
-                    <li class="menu-list-item nav-item-sub">
-                    <a class="nav-link-sub nav-text-sub" href="checkout.html">Checkout</a>
-                    </li>
-                </ul>
-                </div>
-            </li>
-            <li class="menu-list-item nav-item">
-                <a class="nav-link" href="contact.html">Contact</a>
-            </li>
+
+              <li class="menu-list-item nav-item">
+                <a class="nav-link" href="{{ route('home')}}">Acceuil</a>
+              </li>
+
+              <li class="menu-list-item nav-item">
+                <a class="nav-link" href="{{ route('listeOeuvres')}}">Œuvres</a>
+              </li>
+
             </ul>
         </nav>
         <ul class="utility-menu list-unstyled">

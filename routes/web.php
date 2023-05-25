@@ -35,7 +35,6 @@ require __DIR__.'/auth.php';
 
 /* Route liées à Principal */
 Route::get('/', [MainController::class, 'home'])->name('home');
-Route::get('home1', [MainController::class, 'home1'])->name('home1');
 Route::get('listeOeuvres', [MainController::class, 'listeOeuvres'])->name('listeOeuvres');
 Route::get('listeArtistes', [MainController::class, 'listeArtistes'])->name('listeArtistes');
 Route::get('showOeuvre/{id}', [OeuvreController::class, 'show'])->name('showOeuvre');

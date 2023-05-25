@@ -50,7 +50,7 @@ class AuthenticatedSessionController extends Controller
             return redirect()->route('artiste_dashboard');
         }
 
-        return redirect()->route('home1');
+        return redirect()->route('home');
     }
 
     /**
