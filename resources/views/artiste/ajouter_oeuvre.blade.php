@@ -123,7 +123,7 @@
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
                                 <div class="col col-md-3">
-                                    <label for="longeur" class="form-control-label">Hauteur</label>
+                                    <label for="longeur" class="form-control-label">Longeur</label>
                                 </div>
                                 <div class="col-12 col-md-9">
                                     <input class="form-control" type="number" name="longeur" id="longeur" placeholder="Hauteur en cm" value="{{ old('longeur') }}">

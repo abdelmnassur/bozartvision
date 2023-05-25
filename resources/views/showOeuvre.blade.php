@@ -66,7 +66,7 @@
 
                             <h4 class="product-vendor product-meta mb-3 pt-3">
                                 <strong class="label">Réaliser par :</strong> <br>
-                                <a href="{{ route('listeArtistes') }}"> {{ $oeuvre->artiste->user->prenom }} {{ $oeuvre->artiste->user->nom }} </a>
+                                <a href="{{ route('showArtiste',$oeuvre->artiste->id) }}"> {{ $oeuvre->artiste->user->prenom }} {{ $oeuvre->artiste->user->nom }} </a>
                             </h4>
                                
                         </div>

@@ -101,6 +101,32 @@ class UserController extends Controller
         }
     }
 
+
+    public function modifier_photo(Request $req)
+    {
+        $id = $req->idPh;
+        $user = User::find($id);
+
+        if ( $user )
+        {
+            $req->validate([
+                'photo' =>  ['required', 'image', 'mimes:jpeg,png,jpg,gif,svg', 'max:20000'],
+            ]);
+
+            if ($req->file("photo"))
+            {
+                $photoName = time() . "_" . $req->file("photo")->getClientOriginalName();
+                $req->file("photo")->storeAS("public/image/photo_profil/", $photoName);
+            }
+
+            $user->photo = $photoName;
+
+            $user->save();
+
+            return redirect()->back();
+        }
+    }
+
     /**
      * Display the specified resource.
      */

@@ -9,7 +9,50 @@
                 <h6 class="m-0 font-weight-bold text-primary">Profil Utilisateur</h6>
             </div>
             <div class="card-body">
+
+                @if ( $artiste->user->photo)
+                        <div class="row justify-content-center" style="align-content: center">
+
+                            <img src="{{ asset('storage/image/photo_profil/'.$artiste->user->photo) }}">
+
+                        </div>
+
+                        <hr>
+                        
+                        <div class="row justify-content-center" style="align-content: center">
+                            <button onclick="modifierPhoto({{ $artiste->user->id }});"
+                                class="btn">
+                                <span>
+                                    <i class="fas fa-pen"></i>
+                                </span>
+                                <span class="text">Modifier</span>
+                            </button>
+                        </div>
+                @else
+                    <div class="row">
+
+                        <div class="col-lg-3">
+                            <label> PHOTO DE PROFIL : </label> 
+                        </div>
+
+                        <div class="col-lg-6">
+                            <strong class="text-danger" style="font-style: italic"> Photo de profil non définie ! </strong>
+                        </div>
+
+                        <div class="col-lg-3">
+                            <button onclick="modifierPhoto({{ $artiste->user->id }});" class="btn">
+                    
+                                <span>
+                                    <i class="fas fa-pen"></i>
+                                </span>
+                                <span class="text">Définir</span>
+                            </button>
+                        </div>
+                    </div>
+                @endif
                 
+                <hr>
+
                 <div class="row">
 
                     <div class="col-lg-3">
@@ -170,48 +213,6 @@
 
                 </div>
 
-                <hr>
-
-                <div class="row">
-
-                    <div class="col-lg-3">
-                        <label> PHOTO DE PROFIL : </label> 
-                    </div>
-
-                    <div class="col-lg-6">
-                        @if ( $artiste->user->photo )
-                            <strong> {{ $artiste->user->photo }} </strong>
-                        @endif
-                        <strong class="text-danger" style="font-style: italic"> Photo de profil non définie ! </strong>
-                    </div>
-
-                    <div class="col-lg-3">
-
-                        @if ( ! $artiste->user->photo )
-
-                            <button onclick="" class="btn">
-                                <span>
-                                    <i class="fas fa-pen"></i>
-                                </span>
-                                <span class="text">Définir</span>
-                            </button>
-
-                            @else
-
-                            <button onclick="" class="btn">
-                                <span>
-                                    <i class="fas fa-pen"></i>
-                                </span>
-                                <span class="text">Modifier</span>
-                            </button>
-
-                        @endif
-
-                        
-                    </div>
-
-                </div>
-
             </div>
         </div>
     </div>
@@ -233,15 +234,18 @@
                     <div class="col-lg-6">
                         @if ( $artiste->biographie )
                             <strong> {{ $artiste->biographie }} </strong>
+
+                        @else
+                            <strong class="text-danger"> Biographie non définie ! </strong>
                         @endif
-                        <strong class="non"> Biographie non définie ! </strong>
+                        
                     </div>
 
                     <div class="col-lg-3">
 
                         @if ( ! $artiste->biographie )
 
-                            <button onclick="" class="btn">
+                            <button onclick="modifierBiographie({{ $artiste->id }});" class="btn">
                                 <span>
                                     <i class="fas fa-pen"></i>
                                 </span>
@@ -250,7 +254,7 @@
 
                             @else
 
-                            <button onclick="" class="btn">
+                            <button onclick="modifierBiographie({{ $artiste->id }});" class="btn">
                                 <span>
                                     <i class="fas fa-pen"></i>
                                 </span>
@@ -274,24 +278,25 @@
                     <div class="col-lg-6">
                         @if ( $artiste->page_facebook )
                             <strong> {{ $artiste->page_facebook }} </strong>
+                        @else
+                            <strong class="text-danger"> Page facebook non définie ! </strong>
                         @endif
-                        <strong> Page facebook non définie ! </strong>
                     </div>
 
                     <div class="col-lg-3">
 
                         @if ( ! $artiste->page_facebook )
 
-                            <button onclick="" class="btn">
+                            <button onclick="modifierPage_facebook({{ $artiste->id }}, '{{ $artiste->page_facebook }}');" class="btn">
                                 <span>
                                     <i class="fas fa-pen"></i>
                                 </span>
                                 <span class="text">Définir</span>
                             </button>
 
-                            @else
+                        @else
 
-                            <button onclick="" class="btn">
+                            <button onclick="modifierPage_facebook({{ $artiste->id }}, '{{ $artiste->page_facebook }}');" class="btn">
                                 <span>
                                     <i class="fas fa-pen"></i>
                                 </span>
@@ -316,15 +321,17 @@
                     <div class="col-lg-6">
                         @if ( $artiste->page_twitter )
                             <strong> {{ $artiste->page_twitter }} </strong>
+                        @else
+                            <strong class="text-danger"> Page twitter non définie ! </strong>
                         @endif
-                        <strong> Page twitter non définie ! </strong>
+                        
                     </div>
 
                     <div class="col-lg-3">
 
                         @if ( ! $artiste->page_twitter )
 
-                            <button onclick="" class="btn">
+                            <button onclick="modifierPage_twitter({{ $artiste->id }}, '{{ $artiste->page_twitter }}');" class="btn">
                                 <span>
                                     <i class="fas fa-pen"></i>
                                 </span>
@@ -333,7 +340,7 @@
 
                             @else
 
-                            <button onclick="" class="btn">
+                            <button onclick="modifierPage_twitter({{ $artiste->id }}, '{{ $artiste->page_twitter }}');" class="btn">
                                 <span>
                                     <i class="fas fa-pen"></i>
                                 </span>
@@ -358,15 +365,16 @@
                     <div class="col-lg-6">
                         @if ( $artiste->page_instagram )
                             <strong> {{ $artiste->page_instagram }} </strong>
+                        @else
+                            <strong class="text-danger"> Page instagram non définie ! </strong>
                         @endif
-                        <strong> Page instagram non définie ! </strong>
                     </div>
 
                     <div class="col-lg-3">
 
                         @if ( ! $artiste->page_instagram )
 
-                            <button onclick="" class="btn">
+                            <button onclick="modifierPage_instagram({{ $artiste->id }}, '{{ $artiste->page_instagram }}');" class="btn">
                                 <span>
                                     <i class="fas fa-pen"></i>
                                 </span>
@@ -375,7 +383,7 @@
 
                             @else
 
-                            <button onclick="" class="btn">
+                            <button onclick="modifierPage_instagram({{ $artiste->id }}, '{{ $artiste->page_instagram }}');" class="btn">
                                 <span>
                                     <i class="fas fa-pen"></i>
                                 </span>
@@ -401,7 +409,7 @@
                         @if ( $artiste->numero_whatsapp )
                             <strong> {{ $artiste->numero_whatsapp }} </strong>
                         @endif
-                        <strong> Numéro whatsapp non définie ! </strong>
+                        <strong class="text-danger" > Numéro whatsapp non définie ! </strong>
                     </div>
 
                     <div class="col-lg-3">
@@ -481,6 +489,43 @@
             document.getElementById("date_de_naissance").setAttribute("value", date_de_naissance);
             $('#Date_de_naissance').text(date_de_naissance);
             $('#date_de_naissanceModal').modal('show');
+        }
+
+        function modifierPhoto(idPh)
+        {
+            document.getElementById("idPh").setAttribute("value", idPh);
+            $('#photoModal').modal('show');
+        }
+
+
+        function modifierBiographie(idAb)
+        {
+            document.getElementById("idAb").setAttribute("value", idAb);
+            $('#biographieModal').modal('show');
+        }
+
+        function modifierPage_facebook(idAf, page_facebook)
+        {
+            document.getElementById("idAf").setAttribute("value", idAf);
+            document.getElementById("page_facebook").setAttribute("value", page_facebook);
+            $('#Page_facebook').text(page_facebook);
+            $('#page_facebookModal').modal('show');
+        }
+
+        function modifierPage_twitter(idAt, page_twitter)
+        {
+            document.getElementById("idAt").setAttribute("value", idAt);
+            document.getElementById("page_twitter").setAttribute("value", page_twitter);
+            $('#Page_twitter').text(page_twitter);
+            $('#page_twitterModal').modal('show');
+        }
+
+        function modifierPage_instagram(idAi, page_instagram)
+        {
+            document.getElementById("idAi").setAttribute("value", idAi);
+            document.getElementById("page_instagram").setAttribute("value", page_instagram);
+            $('#Page_instagram').text(page_instagram);
+            $('#page_instagramModal').modal('show');
         }
 
     </script>
@@ -704,6 +749,199 @@
                             </div>
                             <div class="col-12 col-md-9">
                                 <input class="form-control" type="date" name="date_de_naissanse" id="date_de_naissance"  required=""> 
+                            </div>
+                        </div>
+                        
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="document.location.reload(false)">Annuler</button>
+                            <button type="submit" class="btn btn-success">Enregistre</button>
+                        </div>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Modification de la photo de profil -->
+<div class="modal fade" id="photoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bolder"> MODIFICATION DE LA PHOTO DE PROFIL </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{{ route('modifier_photo') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    @method('put')
+                    <p>
+                        <input hidden type="number" name="idPh" id="idPh">
+                        <div class="row form-group">
+
+                            <div class="col col-md-3">
+                                <label for="photo" class="form-control-label">Photo de profil</label>
+                            </div>
+                            <div class="col-12 col-md-9">
+                                <input class="form-control" type="file"  name="photo"  required=""> 
+                            </div>
+                        </div>
+                        
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="document.location.reload(false)">Annuler</button>
+                            <button type="submit" class="btn btn-success">Enregistre</button>
+                        </div>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Modification de la biographie -->
+<div class="modal fade" id="biographieModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bolder"> MODIFICATION DE LA DESCRIPTION </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{{ route('modifier_biographie') }}" method="POST">
+                    @csrf
+                    @method('put')
+                    <p>
+                        <input hidden type="number" name="idAb" id="idAb">
+                        <div class="row form-group">
+
+                            <div class="col col-md-3">
+                                <label for="biographie" class="form-control-label">Biographie</label>
+                            </div>
+                            <div class="col-12 col-md-9">
+                                <textarea class="form-control" rows="7" type="text" name="biographie"></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="document.location.reload(false)">Annuler</button>
+                            <button type="submit" class="btn btn-success">Enregistre</button>
+                        </div>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Modification de la page facebook de l'artiste -->
+<div class="modal fade" id="page_facebookModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bolder"> MODIFICATION DE LA PACE FACEBOOK </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{{ route('modifier_page_facebook') }}" method="POST">
+                    @csrf
+                    @method('put')
+                    <p>
+                        <input hidden type="number" name="idAf" id="idAf">
+
+                        <div class="row form-group">
+
+                            <div class="col col-md-3">
+                                <label for="page_facebook" class="form-control-label">PAGE FACEBOOK</label>
+                            </div>
+                            <div class="col-12 col-md-9">
+                                <input class="form-control" type="text" name="page_facebook" id="page_facebook" required=""> 
+                            </div>
+                        </div>
+                        
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="document.location.reload(false)">Annuler</button>
+                            <button type="submit" class="btn btn-success">Enregistre</button>
+                        </div>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Modification de la page twitter de l'artiste -->
+<div class="modal fade" id="page_twitterModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bolder"> MODIFICATION DE LA PACE TWITTER </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{{ route('modifier_page_twitter') }}" method="POST">
+                    @csrf
+                    @method('put')
+                    <p>
+                        <input hidden type="number" name="idAt" id="idAt">
+
+                        <div class="row form-group">
+
+                            <div class="col col-md-3">
+                                <label for="page_twitter" class="form-control-label">PAGE TWITTER</label>
+                            </div>
+                            <div class="col-12 col-md-9">
+                                <input class="form-control" type="text" name="page_twitter" id="page_twitter" required=""> 
+                            </div>
+                        </div>
+                        
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="document.location.reload(false)">Annuler</button>
+                            <button type="submit" class="btn btn-success">Enregistre</button>
+                        </div>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Modification de la page twitter de l'artiste -->
+<div class="modal fade" id="page_instagramModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bolder"> MODIFICATION DE LA PACE TWITTER </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{{ route('modifier_page_instagram') }}" method="POST">
+                    @csrf
+                    @method('put')
+                    <p>
+                        <input hidden type="number" name="idAi" id="idAi">
+
+                        <div class="row form-group">
+
+                            <div class="col col-md-3">
+                                <label for="page_instagram" class="form-control-label">PAGE INSTAGRAM</label>
+                            </div>
+                            <div class="col-12 col-md-9">
+                                <input class="form-control" type="text" name="page_instagram" id="page_instagram" required=""> 
                             </div>
                         </div>
                         

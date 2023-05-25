@@ -39,6 +39,7 @@ Route::get('home1', [MainController::class, 'home1'])->name('home1');
 Route::get('listeOeuvres', [MainController::class, 'listeOeuvres'])->name('listeOeuvres');
 Route::get('listeArtistes', [MainController::class, 'listeArtistes'])->name('listeArtistes');
 Route::get('showOeuvre/{id}', [OeuvreController::class, 'show'])->name('showOeuvre');
+Route::get('showArtiste/{id}', [ArtisteController::class, 'showArtiste'])->name('showArtiste');
 /* END */
 
 
@@ -56,13 +57,21 @@ Route::get('admin_gestion_artistes', [AdminController::class, 'admin_gestion_art
 Route::get('artiste_dashboard', [ArtisteController::class, 'artiste_dashboard'])->name('artiste_dashboard')->middleware(['auth']);
 Route::get('artiste_profil', [ArtisteController::class, 'artiste_profil'])->name('artiste_profil');
 
-    //FONCTION DE MODIFICATION DU PROFIL
+    //FONCTION DE MODIFICATION DU PROFIL User
     Route::put('modifier_nom', [UserController::class, 'modifier_nom'])->name('modifier_nom')->middleware(['auth']);
     Route::put('modifier_prenom', [UserController::class, 'modifier_prenom'])->name('modifier_prenom')->middleware(['auth']);
     Route::put('modifier_genre', [UserController::class, 'modifier_genre'])->name('modifier_genre')->middleware(['auth']);
     Route::put('modifier_telephone', [UserController::class, 'modifier_telephone'])->name('modifier_telephone')->middleware(['auth']);
     Route::put('modifier_email', [UserController::class, 'modifier_email'])->name('modifier_email')->middleware(['auth']);
     Route::put('modifier_date_de_naissance', [UserController::class, 'modifier_date_de_naissance'])->name('modifier_date_de_naissance')->middleware(['auth']);
+    Route::put('modifier_photo', [UserController::class, 'modifier_photo'])->name('modifier_photo')->middleware(['auth']);
+
+    //FONCTION DE MODIFICATION DU PROFIL User
+    Route::put('modifier_biographie', [ArtisteController::class, 'modifier_biographie'])->name('modifier_biographie')->middleware(['auth']);
+    Route::put('modifier_page_facebook', [ArtisteController::class, 'modifier_page_facebook'])->name('modifier_page_facebook')->middleware(['auth']);
+    Route::put('modifier_page_twitter', [ArtisteController::class, 'modifier_page_twitter'])->name('modifier_page_twitter')->middleware(['auth']);
+    Route::put('modifier_page_instagram', [ArtisteController::class, 'modifier_page_instagram'])->name('modifier_page_instagram')->middleware(['auth']);
+
 
     // GESTION OEUVRE
 Route::get('oeuvre_form', [ArtisteController::class, 'oeuvre_form'])->name('oeuvre_form')->middleware(['auth']);

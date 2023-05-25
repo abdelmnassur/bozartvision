@@ -114,7 +114,7 @@
                         </div>
 
                         <div class="col-lg-6">
-                            <strong> {{ $oeuvre->largeur }}x{{ $oeuvre->longeur }} cm²</strong>
+                            <strong> {{ $oeuvre->largeur }}x{{ $oeuvre->longeur }}</strong>
                         </div>
 
                         <div class="col-lg-2">
@@ -445,7 +445,7 @@
                         <div class="row form-group">
 
                             <div class="col col-md-3">
-                                <label for="image" class="form-control-label">Description</label>
+                                <label for="image" class="form-control-label">Image</label>
                             </div>
                             <div class="col-12 col-md-9">
                                 <input class="form-control" type="file"  name="image"  required=""> 

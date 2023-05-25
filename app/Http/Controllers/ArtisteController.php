@@ -23,8 +23,11 @@ class ArtisteController extends Controller
         return view('artiste/artiste_dashboard', compact('oeuvres'));
     }
 
-
-
+    public function showArtiste($id)
+    {
+        $artiste = Artiste::find($id);
+        return view('showArtiste', compact('artiste'));
+    }
 
     /**
      * START FONCTION CATEGORIE
@@ -308,8 +311,8 @@ class ArtisteController extends Controller
     }
     /*    ------------------------------------   */
 
-     /*    Fonction de modification de la description      */
-     public function modifier_image(Request $req)
+    /*    Fonction de modification de l'image    */
+    public function modifier_image(Request $req)
     {
         $id = $req->idI;
         $oeuvre = Oeuvre::find($id);
@@ -334,4 +337,81 @@ class ArtisteController extends Controller
         }
     }
     /*    ------------------------------------   */
+
+    /*    Fonction de modification de la biographie      */
+    public function modifier_biographie(Request $req)
+    {
+        $id = $req->idAb;
+        $artiste = Artiste::find($id);
+
+        if ( $artiste )
+        {
+            $req->validate([
+                'biographie' => ['required', 'string'],
+            ]);
+
+            $artiste->biographie = $req->biographie;
+
+            $artiste->save();
+
+            return redirect()->back();
+        }
+    }
+
+    public function modifier_page_facebook(Request $req)
+    {
+        $id = $req->idAf;
+        $artiste = Artiste::find($id);
+
+        if ( $artiste )
+        {
+            $req->validate([
+                'page_facebook' => ['required', 'string'],
+            ]);
+
+            $artiste->page_facebook = $req->page_facebook;
+
+            $artiste->save();
+
+            return redirect()->back();
+        }
+    }
+
+    public function modifier_page_twitter(Request $req)
+    {
+        $id = $req->idAt;
+        $artiste = Artiste::find($id);
+
+        if ( $artiste )
+        {
+            $req->validate([
+                'page_twitter' => ['required', 'string'],
+            ]);
+
+            $artiste->page_twitter = $req->page_twitter;
+
+            $artiste->save();
+
+            return redirect()->back();
+        }
+    }
+
+    public function modifier_page_instagram(Request $req)
+    {
+        $id = $req->idAi;
+        $artiste = Artiste::find($id);
+
+        if ( $artiste )
+        {
+            $req->validate([
+                'page_instagram' => ['required', 'string'],
+            ]);
+
+            $artiste->page_instagram = $req->page_instagram;
+
+            $artiste->save();
+
+            return redirect()->back();
+        }
+    }
 }
