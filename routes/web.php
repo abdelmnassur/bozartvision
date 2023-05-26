@@ -35,7 +35,10 @@ require __DIR__.'/auth.php';
 
 /* Route liées à Principal */
 Route::get('/', [MainController::class, 'home'])->name('home');
+Route::get('contact', [MainController::class, 'contact'])->name('contact');
 Route::get('listeOeuvres', [MainController::class, 'listeOeuvres'])->name('listeOeuvres');
+Route::get('mon_compte', [MainController::class, 'mon_compte'])->name('mon_compte');
+Route::get('user_compte/{id}', [MainController::class, 'user_compte'])->name('user_compte');
 Route::get('listeArtistes', [MainController::class, 'listeArtistes'])->name('listeArtistes');
 Route::get('showOeuvre/{id}', [OeuvreController::class, 'show'])->name('showOeuvre');
 Route::get('showArtiste/{id}', [ArtisteController::class, 'showArtiste'])->name('showArtiste');

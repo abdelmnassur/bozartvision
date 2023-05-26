@@ -17,11 +17,11 @@
                                 </span>
                             </h4>
                             <ul class="footer-menu list-unstyled mb-0 d-md-block">
-                                <li class="footer-menu-item"><a href="about-us.html">About us</a></li>
-                                <li class="footer-menu-item"><a href="about-us.html">Press center</a></li>
-                                <li class="footer-menu-item"><a href="blog.html">Our magazine</a></li>
-                                <li class="footer-menu-item"><a href="about-us.html">Our group</a></li>
-                                <li class="footer-menu-item"><a href="about-us.html">Work with us</a></li>
+                                <li class="footer-menu-item"><a href="#">About us</a></li>
+                                <li class="footer-menu-item"><a href="#">Press center</a></li>
+                                <li class="footer-menu-item"><a href="#">Our magazine</a></li>
+                                <li class="footer-menu-item"><a href="#">Our group</a></li>
+                                <li class="footer-menu-item"><a href="#">Work with us</a></li>
                             </ul>
                         </div>
                     </div>
@@ -38,11 +38,11 @@
                                 </span>
                             </h4>
                             <ul class="footer-menu list-unstyled mb-0 d-md-block">
-                                <li class="footer-menu-item"><a href="about-us.html">Brand catalog</a></li>
-                                <li class="footer-menu-item"><a href="about-us.html">Discount codes</a></li>
-                                <li class="footer-menu-item"><a href="collection-left-sidebar.html">Furniture</a></li>
-                                <li class="footer-menu-item"><a href="collection-left-sidebar.html">Sofa</a></li>
-                                <li class="footer-menu-item"><a href="collection-left-sidebar.html">Chair</a></li>
+                                <li class="footer-menu-item"><a href="#">Brand catalog</a></li>
+                                <li class="footer-menu-item"><a href="#">Discount codes</a></li>
+                                <li class="footer-menu-item"><a href="#">Furniture</a></li>
+                                <li class="footer-menu-item"><a href="#">Sofa</a></li>
+                                <li class="footer-menu-item"><a href="#">Chair</a></li>
                             </ul>
                         </div>
                     </div>
@@ -59,10 +59,10 @@
                                 </span>
                             </h4>
                             <ul class="footer-menu list-unstyled mb-0 d-md-block">
-                                <li class="footer-menu-item"><a href="faq.html">FAQ</a></li>
-                                <li class="footer-menu-item"><a href="about-us.html">Privacy policy</a></li>
-                                <li class="footer-menu-item"><a href="about-us.html">Support</a></li>
-                                <li class="footer-menu-item"><a href="contact.html">Contact</a></li>
+                                <li class="footer-menu-item"><a href="#">FAQ</a></li>
+                                <li class="footer-menu-item"><a href="#">Privacy policy</a></li>
+                                <li class="footer-menu-item"><a href="#">Support</a></li>
+                                <li class="footer-menu-item"><a href="{{ route('contact') }}">Contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -153,8 +153,8 @@
             <div
                 class="footer-bottom-inner d-flex flex-wrap justify-content-md-between justify-content-center align-items-center">
                 <ul class="footer-bottom-menu list-unstyled d-flex flex-wrap align-items-center mb-0">
-                    <li class="footer-menu-item"><a href="about-us.html">Privacy policy</a></li>
-                    <li class="footer-menu-item"><a href="about-us.html">Terms & Conditions</a></li>
+                    <li class="footer-menu-item"><a href="#">Privacy policy</a></li>
+                    <li class="footer-menu-item"><a href="#">Terms & Conditions</a></li>
                 </ul>
                 <p class="copyright footer-text">©<span class="current-year"></span> bozartvision</p>
             </div>

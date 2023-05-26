@@ -64,8 +64,11 @@
         }
         </style>
     
+        <link href="{{ asset('template2/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('template/vendor/font-awesome-5/css/fontawesome-all.min.css') }}" rel="stylesheet" media="all">
         <link rel="stylesheet" href="{{ asset('template1/css/vendor.css') }}">
         <link rel="stylesheet" href="{{ asset('template1/css/style.css') }} ">
+        <link rel="stylesheet" href="{{ asset('template/css/style.css') }} ">
     </head>
   
 

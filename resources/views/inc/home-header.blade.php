@@ -5,9 +5,11 @@
         <div class="row align-items-center">
           <div class="col-lg-3 col-md-4 col-4">
             <div class="header-logo">
+
               <a href="{{ route('home')}}" class="logo-main">
                 <img src="{{ asset('template1/img/logo.png') }}" loading="lazy" alt="bisum">
               </a>
+
             </div>
           </div>
           <div class="col-lg-6 d-lg-block d-none">
@@ -28,6 +30,7 @@
               </form>
             </div>
           </div>
+
           <div class="col-lg-3 col-md-8 col-8">
             <div class="header-action d-flex align-items-center justify-content-end">
               <a class="header-action-item header-search d-lg-none" href="javascript:void(0)">
@@ -66,6 +69,7 @@
               </a>
             </div>
           </div>
+
         </div>
       </div>
 
@@ -95,10 +99,14 @@
         </div>
       </div>
     </div>
+
     <div class="header-bottom d-lg-block d-none">
       <div class="container">
+
         <div class="row">
-          <div class="col-lg-10">
+
+          <div class="col-lg-8">
+
             <nav class="site-navigation">
               <ul class="main-menu list-unstyled">
 
@@ -110,60 +118,41 @@
                   <a class="nav-link" href="{{ route('listeOeuvres')}}">Œuvres</a>
                 </li>
 
-                <li class="menu-list-item nav-item has-dropdown">
-                  <div class="mega-menu-header">
-                    <a class="nav-link" href="blog.html">Connexion</a>
-                    <span class="open-submenu">
-                      <svg class="icon icon-dropdown" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <polyline points="6 9 12 15 18 9"></polyline>
-                      </svg>
-                    </span>
-                  </div>
-                  <div class="submenu-transform submenu-transform-desktop">
-                    <ul class="submenu list-unstyled">
-                      <li class="menu-list-item nav-item-sub">
-                        <a class="nav-link-sub nav-text-sub" href="blog.html">Connexion</a>
-                      </li>
-                      <li class="menu-list-item nav-item-sub">
-                        <a class="nav-link-sub nav-text-sub" href="article.html">Inscription</a>
-                      </li>
-                    </ul>
-                  </div>
+                <li class="menu-list-item nav-item">
+                  <a class="nav-link" href="{{ route('listeArtistes')}}">Artiste</a>
                 </li>
 
                 <li class="menu-list-item nav-item">
-                  <a class="nav-link" href="#">Contact</a>
+                  <a class="nav-link" href="{{ route('contact')}}">Contact</a>
                 </li>
 
               </ul>
             </nav>
+
           </div>
-          <div class="col-lg-2">
+          
+          <div class="col-lg-4 d-flex justify-content-end">
 
-          @guest
-            <div class="member-signup d-flex justify-content-around">
-              
-              <a href="{{ route('login') }}" class="btn-member text-white" style="margin-right: 3px">Connexion</a>
-              <a href="{{ route('register') }}" class="btn-member text-white"style="margin-left: 3px">Inscription</a>
+            @guest
 
-            </div>
-          @else
+              <div class="dropdown">
+                <button class="dropbtn"> <i class="fas fa-user-circle"></i> - Connexion -</button>
+                <div class="dropdown-content">
+                  <a class="text-success" href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i> Connexion </a>
+                  <a href="{{ route('register') }}"> <i class="fas fa-pen"></i> Inscription</a>
+                </div>
+              </div>
 
-            <div class="member-signup d-flex justify-content-around">
-                
-              <a href="#" class="btn-member text-white" style="margin-right: 3px">Mon compte</a>
-              <a href="#" class="btn-member text-white"style="margin-left: 3px" onClick="event.preventDefault(); document.getElementById('deconnection').submit()">Déconnexion</a>
+              @else
 
-              <form action="{{ route('logout') }}" method="post" id="deconnection">
-                @csrf
-                @method('post')
-              </form>
-
-            </div>
-              
-          @endguest
+                <div class="dropdown">
+                  <button class="dropbtn"> <i class="fas fa-user-circle"></i> {{ Auth()->user()->prenom }}</button>
+                  <div class="dropdown-content">
+                    <a class="text-success" href="{{ route('mon_compte') }}"> <i class="fas fa-user-circle"></i> Mon compte</a>
+                    <a class="text-danger" href="#" onClick="event.preventDefault(); document.getElementById('deconnection').submit()">Déconnexion <i class="fas fa-sign-out-alt"></i></a>
+                  </div>
+                </div>
+            @endguest
 
           </div>
         </div>
@@ -192,10 +181,19 @@
                 <a class="nav-link" href="{{ route('listeOeuvres')}}">Œuvres</a>
               </li>
 
+              <li class="menu-list-item nav-item">
+                <a class="nav-link" href="{{ route('listeArtistes')}}">Artiste</a>
+              </li>
+
+              <li class="menu-list-item nav-item">
+                <a class="nav-link" href="{{ route('contact')}}">Contact</a>
+              </li>
+
             </ul>
         </nav>
         <ul class="utility-menu list-unstyled">
-            <li class="utilty-menu-item">
+          <li class="utilty-menu-item">
+
             <a class="announcement-text" href="tel:+1-078-2376">
                 <span class="utilty-icon-wrapper">
                 <svg class="icon icon-phone" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -206,83 +204,57 @@
                     </path>
                 </svg>
                 </span>
-                Call: +1 078 2376
+                Call: +226 54 40 25
             </a>
-            </li>
-            <li class="utilty-menu-item">
-            <a class="announcement-login announcement-text" href="login.html">
-                <span class="utilty-icon-wrapper">
-                <svg class="icon icon-user" width="24" height="24" viewBox="0 0 10 11" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                    d="M5 0C3.07227 0 1.5 1.57227 1.5 3.5C1.5 4.70508 2.11523 5.77539 3.04688 6.40625C1.26367 7.17188 0 8.94141 0 11H1C1 8.78516 2.78516 7 5 7C7.21484 7 9 8.78516 9 11H10C10 8.94141 8.73633 7.17188 6.95312 6.40625C7.88477 5.77539 8.5 4.70508 8.5 3.5C8.5 1.57227 6.92773 0 5 0ZM5 1C6.38672 1 7.5 2.11328 7.5 3.5C7.5 4.88672 6.38672 6 5 6C3.61328 6 2.5 4.88672 2.5 3.5C2.5 2.11328 3.61328 1 5 1Z"
-                    fill="#000" />
-                </svg>
-                </span>
-                <span>Login</span>
-            </a>
-            </li>
-            <li class="utilty-menu-item">
-            <a class="header-action-item header-wishlist" href="wishlist.html">
-                <span class="utilty-icon-wrapper">
-                <svg class="icon icon-wishlist" width="26" height="22" viewBox="0 0 26 22" fill="#000"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                    d="M6.96429 0.000183105C3.12305 0.000183105 0 3.10686 0 6.84843C0 8.15388 0.602121 9.28455 1.16071 10.1014C1.71931 10.9181 2.29241 11.4425 2.29241 11.4425L12.3326 21.3439L13 22.0002L13.6674 21.3439L23.7076 11.4425C23.7076 11.4425 26 9.45576 26 6.84843C26 3.10686 22.877 0.000183105 19.0357 0.000183105C15.8474 0.000183105 13.7944 1.88702 13 2.68241C12.2056 1.88702 10.1526 0.000183105 6.96429 0.000183105ZM6.96429 1.82638C9.73912 1.82638 12.3036 4.48008 12.3036 4.48008L13 5.25051L13.6964 4.48008C13.6964 4.48008 16.2609 1.82638 19.0357 1.82638C21.8613 1.82638 24.1429 4.10557 24.1429 6.84843C24.1429 8.25732 22.4018 10.1584 22.4018 10.1584L13 19.4036L3.59821 10.1584C3.59821 10.1584 3.14844 9.73397 2.69866 9.07411C2.24888 8.41426 1.85714 7.55466 1.85714 6.84843C1.85714 4.10557 4.13867 1.82638 6.96429 1.82638Z"
-                    fill="#000" />
-                </svg>
-                </span>
-                <span>My wishlist</span>
-            </a>
-            </li>
-            <li class="utilty-menu-item">
-            <button type="button" class="currency-btn btn-reset" data-bs-toggle="dropdown" aria-expanded="false">
-                <img class="flag" src="{{ asset('template1/img/flag/usd.jpg') }}" alt="img">
-                <span>USD</span>
-                <span class="utilty-icon-wrapper">
-                <svg class="icon icon-dropdown" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                    viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-                </span>
-            </button>
 
-            <ul class="currency-list dropdown-menu dropdown-menu-end px-2">
-                <li class="currency-list-item ">
-                <a class="currency-list-option" href="#" data-value="USD">
-                    <img class="flag" src="{{ asset('template1/img/flag/usd.jpg') }}" alt="img">
-                    <span>USD</span>
-                </a>
-                </li>
-                <li class="currency-list-item ">
-                <a class="currency-list-option" href="#" data-value="CAD">
-                    <img class="flag" src="{{ asset('template1/img/flag/cad.jpg') }}" alt="img">
-                    <span>CAD</span>
-                </a>
-                </li>
-                <li class="currency-list-item ">
-                <a class="currency-list-option" href="#" data-value="EUR">
-                    <img class="flag" src="{{ asset('template1/img/flag/eur.jpg') }}" alt="img">
-                    <span>EUR</span>
-                </a>
-                </li>
-                <li class="currency-list-item ">
-                <a class="currency-list-option" href="#" data-value="JPY">
-                    <img class="flag" src="{{ asset('template1/img/flag/jpy.jpg') }}" alt="img">
-                    <span>JPY</span>
-                </a>
-                </li>
-                <li class="currency-list-item ">
-                <a class="currency-list-option" href="#" data-value="GBP">
-                    <img class="flag" src="{{ asset('template1/img/flag/gbp.jpg') }}" alt="img">
-                    <span>GBP</span>
-                </a>
-                </li>
-            </ul>
-            </li>
+          </li>
+
+
+          <li class="utilty-menu-item">
+
+            @guest
+
+              <a class="announcement-login announcement-text" href="{{ route('login') }}">
+                  <span class="utilty-icon-wrapper">
+                  <svg class="icon icon-user" width="24" height="24" viewBox="0 0 10 11" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                      d="M5 0C3.07227 0 1.5 1.57227 1.5 3.5C1.5 4.70508 2.11523 5.77539 3.04688 6.40625C1.26367 7.17188 0 8.94141 0 11H1C1 8.78516 2.78516 7 5 7C7.21484 7 9 8.78516 9 11H10C10 8.94141 8.73633 7.17188 6.95312 6.40625C7.88477 5.77539 8.5 4.70508 8.5 3.5C8.5 1.57227 6.92773 0 5 0ZM5 1C6.38672 1 7.5 2.11328 7.5 3.5C7.5 4.88672 6.38672 6 5 6C3.61328 6 2.5 4.88672 2.5 3.5C2.5 2.11328 3.61328 1 5 1Z"
+                      fill="#000" />
+                  </svg>
+                  </span>
+                  <span>Connexion</span>
+              </a>
+
+              @else
+
+                <a class="announcement-login announcement-text" href="{{ route('mon_compte') }}">
+                  <span class="utilty-icon-wrapper">
+                  <svg class="icon icon-user" width="24" height="24" viewBox="0 0 10 11" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                      d="M5 0C3.07227 0 1.5 1.57227 1.5 3.5C1.5 4.70508 2.11523 5.77539 3.04688 6.40625C1.26367 7.17188 0 8.94141 0 11H1C1 8.78516 2.78516 7 5 7C7.21484 7 9 8.78516 9 11H10C10 8.94141 8.73633 7.17188 6.95312 6.40625C7.88477 5.77539 8.5 4.70508 8.5 3.5C8.5 1.57227 6.92773 0 5 0ZM5 1C6.38672 1 7.5 2.11328 7.5 3.5C7.5 4.88672 6.38672 6 5 6C3.61328 6 2.5 4.88672 2.5 3.5C2.5 2.11328 3.61328 1 5 1Z"
+                      fill="#000" />
+                  </svg>
+                  </span>
+                  <span>Mon compte</span>
+                </a> <br>
+
+                <a class="text-danger" href="#" onClick="event.preventDefault(); document.getElementById('deconnection').submit()"><i class="fas fa-sign-out-alt ml-3" style="font-size: larger"></i> Déconnexion </a>
+
+            @endguest
+          </li>
+
+
         </ul>
         </div>
     </div>
 </div>
-<!-- drawer menu end -->  
+<!-- drawer menu end -->
+
+<!-- formulaire de déconnexion start -->
+<form action="{{ route('logout') }}" method="post" id="deconnection">
+  @csrf
+  @method('post')
+</form>
+<!-- formulaire de déconnexion end -->
