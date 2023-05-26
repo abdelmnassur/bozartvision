@@ -32,53 +32,16 @@ class AdminController extends Controller
         $artistes = Artiste::all();
         return view('admin/gestion_artistes', compact('artistes'));
     }
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
+
+    public function admin_profil()
+    {   
+        $user = Auth()->user()->id;
+        $admin = Admin::where('user_id', $user)->get();
+        $id = $admin[0]->id;
+        $admin = Admin::find($id);
+        return view('admin/admin_profil', compact('admin'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
 
     /**
      * desactive or active the specified resource from storage.

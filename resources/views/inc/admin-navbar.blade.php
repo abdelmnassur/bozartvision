@@ -21,6 +21,14 @@
 
                 <li class="has-sub">
 
+                    <a href="{{ route('admin_profil') }}">
+                        <i class="fas fa-user"></i>Mon compte
+                    </a>
+
+                </li>
+
+                <li class="has-sub">
+
                     <a onClick="event.preventDefault(); document.getElementById('deconnection').submit()" href="">
                         <i class="zmdi zmdi-power"></i>Déconnexion
                     </a>

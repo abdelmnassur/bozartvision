@@ -50,6 +50,7 @@ Route::get('admin_dashboard', [AdminController::class, 'admin_dashboard'])->name
 Route::put('admin/desactiver_activer/', [AdminController::class, 'desactiverActiver'])->name('admin_activer_desactiver')->middleware(['auth']);
 Route::get('admin_gestion_users', [AdminController::class, 'admin_gestion_users'])->name('admin_gestion_users')->middleware(['auth']);
 Route::get('admin_gestion_artistes', [AdminController::class, 'admin_gestion_artistes'])->name('admin_gestion_artistes')->middleware(['auth']);
+Route::get('admin_profil', [AdminController::class, 'admin_profil'])->name('admin_profil');
 /* END */
 
 

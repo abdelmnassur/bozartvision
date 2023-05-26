@@ -47,6 +47,8 @@
                             
                             <h4 class="product-vendor product-meta mb-3"> <strong class="label">Genre : </strong> {{ $artistes[0]->user->genre }} </h4>
                             
+                            <h4 class="product-vendor product-meta mb-3"> <strong class="label">E-mail : </strong> {{ $artistes[0]->user->email }} </h4>
+                            
                             <div class="footer-social-wrapper">
                                 <ul
                                     class="footer-social list-unstyled d-flex align-items-center flex-wrap mb-0">

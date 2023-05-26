@@ -46,6 +46,8 @@
                             <h4 class="product-vendor product-meta mb-3"> <strong class="label">Date de naissance : </strong>{{ $artiste->user->date_de_naissanse }}
                             
                             <h4 class="product-vendor product-meta mb-3"> <strong class="label">Genre : </strong> {{ $artiste->user->genre }} </h4>
+
+                            <h4 class="product-vendor product-meta mb-3"> <strong class="label">Email : </strong> {{ $artiste->user->email }} </h4>
                             
                             <div class="footer-social-wrapper">
                                 <ul

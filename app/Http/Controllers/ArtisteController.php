@@ -195,7 +195,7 @@ class ArtisteController extends Controller
     public function artiste_profil()
     {   
         $user = Auth()->user()->id;
-        $artiste = DB::select("SELECT * FROM `artistes` WHERE user_id = $user;");
+        $artiste = Artiste::where('user_id', $user)->get();
         $id = $artiste[0]->id;
         $artiste = Artiste::find($id);
         return view('artiste/artiste_profil', compact('artiste'));
